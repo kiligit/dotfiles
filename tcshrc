@@ -96,7 +96,7 @@ setenv GREP_COLOR 32
 
 xmodmap -e 'clear Lock'
 xmodmap ~/.Xmodmap
-xset r rate 200 20	
+xset r rate 200 40	
 
 "\e[5~": history-search-backward
 "\e[6~": history-search-forward
