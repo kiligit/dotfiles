@@ -100,7 +100,7 @@ xset r rate 200 40
 
 bindkey "\e[5~" history-search-backward		#syntax for tcsh
 bindkey "\e[6~" history-search-forward
-bindkey -s "\e[25~" ""
+# bindkey -s "\e[25~" ""
 #disable beep sound
 #xset -b
 xset b off
