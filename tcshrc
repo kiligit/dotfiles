@@ -94,8 +94,8 @@ endif
 setenv GREP_OPTIONS --color=auto
 setenv GREP_COLOR 32
 
-xmodmap -e 'clear Lock'
-xmodmap ~/.Xmodmap
+# xmodmap -e 'clear Lock'
+# xmodmap ~/.Xmodmap
 xset r rate 200 40	
 
 bindkey "\e[5~" history-search-backward		#syntax for tcsh
