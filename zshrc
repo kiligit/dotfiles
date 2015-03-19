@@ -75,11 +75,11 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-	if [[-d ~/gnuplot/]] then source ~/gnuplot/ fi
+	if [[ -d ~/gnuplot/ ]]; then source ~/gnuplot/; fi
 	#source ~/qtplot/
-     if [[-d  ~/Downloads/jpgfdraw-0.5.6b/bin/ ]] 	 source ~/Downloads/jpgfdraw-0.5.6b/bin/ fi
-	if [[-d ~/Apps/ ]] source ~/Apps/ fi
-	if [[-d s~/Dokumente/Disstex  ]] source ~/Dokumente/Disstex fi
+    if [[ -d  ~/Downloads/jpgfdraw-0.5.6b/bin/ ]]; then source ~/Downloads/jpgfdraw-0.5.6b/bin/; fi
+	if [[ -d ~/Apps/ ]] ; then source ~/Apps/; fi
+	if [[ -d ~/Dokumente/Disstex  ]]; then source ~/Dokumente/Disstex; fi
 	
 
 xset b off
