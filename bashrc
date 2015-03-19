@@ -110,3 +110,9 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+#*MCTDH*A***********************************************************************
+# Following lines written by install_mctdh.  Thu Mar 19 15:58:06 CET 2015
+export MCTDH_DIR=/home/kilian/Downloads/mctdh85.2.2
+. $MCTDH_DIR/install/mctdh.profile
+if [ -f ~/.mctdhrc ] && [ -t 0 ] ; then . ~/.mctdhrc ; fi
+#*MCTDH*B***********************************************************************
