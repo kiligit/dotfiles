@@ -76,8 +76,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 	if [[ -d ~/gnuplot/ ]]; then source ~/gnuplot/; fi
-	#source ~/qtplot/
-    if [[ -d  ~/Downloads/jpgfdraw-0.5.6b/bin/ ]]; then source ~/Downloads/jpgfdraw-0.5.6b/bin/; fi
+	if [[ -d ~/qtplot/ ]]; then source ~/gtplot/ ]]; fi
+    if [[ -d ~/Downloads/jpgfdraw-0.5.6b/bin/ ]]; then source ~/Downloads/jpgfdraw-0.5.6b/bin/; fi
 	if [[ -d ~/Apps/ ]] ; then source ~/Apps/; fi
 	if [[ -d ~/Dokumente/Disstex  ]]; then source ~/Dokumente/Disstex; fi
 	
@@ -89,9 +89,9 @@ xset r rate 200 40
 
 # Example aliases
 # echo ~/.bash_aliases
-  if [[ -f .zsh_aliases ]] then
+    if [[ -f .zsh_aliases ]] then
     source ~/.zsh_aliases
-fi
+    fi
 
 #ALIASES
 ###
