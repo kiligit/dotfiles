@@ -21,12 +21,10 @@ alias gv 'gvim \!:* &'
 alias ff 'find . -name \*\!:1\* -print'
 alias mine 'ps aux | grep USER | grep -v grep; ps aux|grep -i kilian |grep -v grep' 
 alias diskspace "du -S | sort -n -r |more"
-alias ONE '|awk '\''{ print $1}'\'' '
 #ssh sync stuff
 alias zappa 'ssh -Y kilian@132.187.199.31'
 #alias synchronisieren 'rsync -avzu -e ssh rkritzer.local@wpc1067:~/Private/ ~/Private/'
 #alias backup= 'rsync -avzu -e ssh rkritzer.local@wpc1067:~/ /media/asjdfajsdf/'
-alias G 'grep --color \!:*'
 alias diskspace "du -S | sort -n -r |more"
 alias mendeley "python /home/kilian/Apps/mendeleydesktop-1.11-linux-x86_64/bin/mendeleydesktop \!:* &"
 
