@@ -75,11 +75,11 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-	source ~/gnuplot/
+	if [[-d ~/gnuplot/]] then source ~/gnuplot/ fi
 	#source ~/qtplot/
-	source ~/Downloads/jpgfdraw-0.5.6b/bin/
-	source ~/Apps/
-	source ~/Dokumente/Disstex
+     if [[-d  ~/Downloads/jpgfdraw-0.5.6b/bin/ ]] 	 source ~/Downloads/jpgfdraw-0.5.6b/bin/ fi
+	if [[-d ~/Apps/ ]] source ~/Apps/ fi
+	if [[-d s~/Dokumente/Disstex  ]] source ~/Dokumente/Disstex fi
 	
 
 xset b off
@@ -89,17 +89,17 @@ xset r rate 200 40
 
 # Example aliases
 # echo ~/.bash_aliases
-      if [[ -f .zsh_aliases ]] then
+  if [[ -f .zsh_aliases ]] then
     source ~/.zsh_aliases
 fi
 
 #ALIASES
 ###
 alias p='ps -ef |grep -i -v root'
-alias k='kate \!:* &'
-alias x='xmgrace \!:* &'
-alias k='kate \!:* &'
-alias gv='gvim \!:* &'
+alias k='kate  &'
+alias x='xmgrace  &'
+alias k='kate  &'
+alias gv='gvim  &'
 alias ff='find . -name \*\!:1\* -print'
 alias mine='ps aux | grep USER | grep -v grep; ps aux|grep -i kilian |grep -v grep' 
 alias diskspace "du -S | sort -n -r |more"
@@ -110,8 +110,8 @@ alias -g M='| less'
 alias zappa='ssh -Y kilian@132.187.199.31'
 #alias backup='rsync -avzu -e ssh rkritzer.local@wpc1067:~/ /media/sjdfajsdf/'
 alias diskspace="du -S | sort -n -r |more"
-alias mendeley="python /home/kilian/Apps/mendeleydesktop-1.11-linux-x86_64/bin/mendeleydesktop \!:* &"
-alias molden='~/Downloads/molden5.0/molden \!:* &'
+alias mendeley="python /home/kilian/Apps/mendeleydesktop-1.11-linux-x86_64/bin/mendeleydesktop  &"
+alias molden='~/Downloads/molden5.0/molden  &'
 alias q='squeue -a'
 
 
