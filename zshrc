@@ -96,10 +96,9 @@ xset r rate 200 40
 #ALIASES
 ###
 alias p='ps -ef |grep -i -v root'
-alias k='kate  &'
-alias x='xmgrace  &'
-alias k='kate  &'
-alias gv='gvim  &'
+function x() {xmgrace $* &}
+function k() {kate $* &}
+function gv() {gvim $* &}
 alias ff='find . -name \*\!:1\* -print'
 alias mine='ps aux | grep USER | grep -v grep; ps aux|grep -i kilian |grep -v grep' 
 alias diskspace "du -S | sort -n -r |more"
