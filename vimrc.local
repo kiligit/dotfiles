@@ -1,5 +1,10 @@
+"enable F13 to use it as ESC. F13 is mapped to CAPS by Xmodmap
 set <F13>=^[[25~
 nnoremap <F13> i
 inoremap <F13> <Esc>1
-inoremap ii <Esc>1
+" inoremap ii <Esc>1
 vnoremap <F13> <Esc>1
+"autocmd for relativenumber. absolute number in insert mode, relativenumber in
+"visual mode:
+autocmd InsertEnter * :set rnu! "disable relativenumber
+autocmd InsertLeave * :set rnu  "enable relativenumber
