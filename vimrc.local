@@ -4,6 +4,7 @@ nnoremap <F13> i
 inoremap <F13> <Esc>1
 " inoremap ii <Esc>1
 vnoremap <F13> <Esc>1
+nnoremap <Leader>s :let @x=@" \| let @"=@a \| let @a=@b \| let @b=@x<CR>
 "autocmd for relativenumber. absolute number in insert mode, relativenumber in
 "visual mode:
 autocmd InsertEnter * :set rnu! "disable relativenumber

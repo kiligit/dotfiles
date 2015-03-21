@@ -1,2 +1,2 @@
 Bundle "gerw/vim-latex-suite"
-Bundle "Lokaltog/vim-easymotion"
+""Bundle "Lokaltog/vim-easymotion"  "already installed ,,s"
