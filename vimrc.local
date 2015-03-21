@@ -5,8 +5,15 @@ inoremap <F13> <Esc>1
 " inoremap ii <Esc>1
 vnoremap <F13> <Esc>1
 ""nnoremap <Leader>s :let @x=@" \| let @"=@a \| let @a=@b \| let @b=@x<CR>
+"nice map to cp XClipboard to 0 and 1 register"
 nnoremap <Leader>s :let @a=@" \| let @"=@+ \| let @+=@a<CR>
 "autocmd for relativenumber. absolute number in insert mode, relativenumber in
 "visual mode:
 autocmd InsertEnter * :set rnu! "disable relativenumber
 autocmd InsertLeave * :set rnu  "enable relativenumber
+function SetXeTex()
+    let g:Tex_CompileRule_pdf = 'xelatex -aux-directory=F:/Vim/my_latex_doc/temp --synctex=-1 -src-specials -interaction=nonstopmode $*'
+endfunction
+map <Leader>lx :<C-U>call SetXeTex()<CR>
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
