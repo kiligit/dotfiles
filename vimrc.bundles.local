@@ -1,0 +1,2 @@
+"local plugins read in by vundle. use bundleinstall etc. "
+Bundle "lervag/vimtex"
