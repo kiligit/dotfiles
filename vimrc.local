@@ -20,3 +20,5 @@ let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 "spell checking "
 set spell
 set spelllang=de,en
+nnoremap <Leader>. [s
+noremap <Leader>- ]s
