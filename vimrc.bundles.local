@@ -1,2 +1,4 @@
 "local plugins read in by vundle. use bundleinstall etc. "
 Bundle "lervag/vimtex"
+""Bundle "gerw/vim-latex-suite"
+""Bundle "Lokaltog/vim-easymotion"  "already installed ,,s"
