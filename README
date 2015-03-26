@@ -1,0 +1,5 @@
+"the dotfilecp.sh script links all dotfiles to ~/. and moves all existing ones to ~/dotfiles_old/"
+"to use the german spell checker. use the following cmds"
+ln -s ~/dofiles/de.utf-8.spl ~/.vim/spell/
+ln -s ~/dofiles/de.utf-8.sup ~/.vim/spell/
+ln -s ~/dofiles/en.utf-8.add ~/.vim/spell/
