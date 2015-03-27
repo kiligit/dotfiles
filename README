@@ -3,3 +3,10 @@
 ln -s ~/dofiles/de.utf-8.spl ~/.vim/spell/
 ln -s ~/dofiles/de.utf-8.sup ~/.vim/spell/
 ln -s ~/dofiles/en.utf-8.add ~/.vim/spell/
+"for latex fonts to work use "
+tlmgr info collection-fontsrecommended
+tlmgr install collection-fontsrecommended
+"DONT FORGET. Latex font names are different due to cp-right"
+The TeX-GYRE bun­dle con­sists of six font fam­i­lies:
+http://www.ctan.org/tex-archive/fonts/tex-gyre
+tlmgr is used for tex-live font management
