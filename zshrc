@@ -45,7 +45,8 @@ ZSH_THEME="kili"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+#plugins=(git)
+plugins=(git history-substring-search.zsh)
 
 # User configuration
 
@@ -80,7 +81,8 @@ source $ZSH/oh-my-zsh.sh
     if [[ -d ~/Downloads/jpgfdraw-0.5.6b/bin/ ]]; then source ~/Downloads/jpgfdraw-0.5.6b/bin/; fi
 	if [[ -d ~/Apps/ ]] ; then source ~/Apps/; fi
 	if [[ -d ~/Dokumente/Disstex  ]]; then source ~/Dokumente/Disstex; fi
-	
+	if [[ -d ~/scratch/  ]]; then source ~/scratch/;  fi
+
 
 xset b off
 xset r rate 200 40	
@@ -111,7 +113,7 @@ alias zappa='ssh -Y kilian@132.187.199.31'
 alias diskspace="du -S | sort -n -r |more"
 alias mendeley="python /home/kilian/Apps/mendeleydesktop-1.11-linux-x86_64/bin/mendeleydesktop  &"
 alias molden='~/Downloads/molden5.0/molden  &'
-alias q='squeue -a'
+alias q='ssh zappa "squeue -a"'
 
 
 # DIs shit doesn work...
