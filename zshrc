@@ -114,6 +114,7 @@ alias diskspace="du -S | sort -n -r |more"
 alias mendeley="python /home/kilian/Apps/mendeleydesktop-1.11-linux-x86_64/bin/mendeleydesktop  &"
 alias molden='~/Downloads/molden5.0/molden  &'
 alias q='ssh zappa "squeue -a"'
+alias lates='latexmk -silent'
 
 
 # DIs shit doesn work...

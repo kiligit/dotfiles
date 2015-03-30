@@ -27,6 +27,6 @@ set spelllang=de,en
 nnoremap <Leader>. [s
 noremap <Leader>- ]s
 "disable arrow keys to BREAK the habit use HARDMODE!!"
-"autoenable HARDMODE!!"
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+"autoenable HARDMODE!! suxx. hardtime is better"
+  let g:hardtime_default_on = 1 
+nnoremap <leader>h <Esc>:HardTimeToggle<CR>
