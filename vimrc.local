@@ -26,7 +26,13 @@ noremap <Right> <NOP>
 set spelllang=de,en
 nnoremap <Leader>. [s
 noremap <Leader>- ]s
+"importan alt+h = help menu.must be disabeld!!!!!!!!!!"
+set winaltkeys=no
+inoremap <silent> <A-l> <C-o>l
+inoremap <silent> <A-h> <C-o>h
 "disable arrow keys to BREAK the habit use HARDMODE!!"
 "autoenable HARDMODE!! suxx. hardtime is better"
   let g:hardtime_default_on = 1 
 nnoremap <leader>h <Esc>:HardTimeToggle<CR>
+"options for vim session save. dont safe global and local settings"
+set ssop-=options
