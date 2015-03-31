@@ -79,15 +79,13 @@
 @default color 1
 @default pattern 1
 @default font 4
-@default font 4
 @timestamp font 4
-@title font 4
-@subtitle font 4
-@xaxis  label font 4
-@xaxis  ticklabel font 4
-@yaxis  label font 4
-@yaxis  ticklabel font 4
-@legend font 4
+#title font 4
+#subtitle font 4
+#xaxis  label font 4
+#xaxis  ticklabel font 4
+#yaxis  label font 4
+#yaxis  ticklabel font 4
 @default char size 1.000000
 @default symbol size 1.00000
 @DEFAULT LINEWIDTH 2
@@ -185,11 +183,11 @@
 @    xaxis  tick in
 @    xaxis  tick major size 1.000000
 @    xaxis  tick major color 1
-@    xaxis  tick major linewidth 1.0
+@    xaxis  tick major linewidth 2.0
 @    xaxis  tick major linestyle 1
 @    xaxis  tick major grid off
 @    xaxis  tick minor color 1
-@    xaxis  tick minor linewidth 1.0
+@    xaxis  tick minor linewidth 2.0
 @    xaxis  tick minor linestyle 1
 @    xaxis  tick minor grid off
 @    xaxis  tick minor size 0.500000
@@ -236,11 +234,11 @@
 @    yaxis  tick in
 @    yaxis  tick major size 1.000000
 @    yaxis  tick major color 1
-@    yaxis  tick major linewidth 1.0
+@    yaxis  tick major linewidth 2.0
 @    yaxis  tick major linestyle 1
 @    yaxis  tick major grid off
 @    yaxis  tick minor color 1
-@    yaxis  tick minor linewidth 1.0
+@    yaxis  tick minor linewidth 2.0
 @    yaxis  tick minor linestyle 1
 @    yaxis  tick minor grid off
 @    yaxis  tick minor size 0.500000
@@ -272,7 +270,7 @@
 @    legend 0.85, 0.8
 @    legend box color 1
 @    legend box pattern 1
-@    legend box linewidth 1.0
+@    legend box linewidth 2.0
 @    legend box linestyle 1
 @    legend box fill color 0
 @    legend box fill pattern 1
