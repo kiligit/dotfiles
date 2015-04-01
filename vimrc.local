@@ -1,9 +1,9 @@
 "enable F13 to use it as ESC. F13 is mapped to CAPS by Xmodmap
 set <F13>=^[[25~
 nnoremap <F13> i
-inoremap <F13> <Esc>1
-" inoremap ii <Esc>1
-vnoremap <F13> <Esc>1
+inoremap <F13> <Esc>l
+" inoremap ii <Esc>l
+vnoremap <F13> <Esc>l
 ""nnoremap <Leader>s :let @x=@" \| let @"=@a \| let @a=@b \| let @b=@x<CR>
 "nice map to cp XClipboard to 0 and 1 register"
 nnoremap <Leader>s :let @a=@" \| let @"=@+ \| let @+=@a<CR>
@@ -12,17 +12,13 @@ nnoremap <Leader>s :let @a=@" \| let @"=@+ \| let @+=@a<CR>
 autocmd InsertEnter * :set rnu! "disable relativenumber
 autocmd InsertLeave * :set rnu  "enable relativenumber
 function SetXeTex()
-    let g:Tex_CompileRule_pdf = 'xelatex -aux-directory=F:/Vim/my_latex_doc/temp --synctex=-1 -src-specials -interaction=nonstopmode $*'
+    let g:Tex_CompileRule_pdf = 'xelatex --synctex=-1 -src-specials -interaction=nonstopmode $*'
 endfunction
 map <Leader>lx :<C-U>call SetXeTex()<CR>
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 "spell checking "
 set spell
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
 set spelllang=de,en
 nnoremap <Leader>. [s
 noremap <Leader>- ]s
@@ -32,7 +28,15 @@ inoremap <silent> <A-l> <C-o>l
 inoremap <silent> <A-h> <C-o>h
 "disable arrow keys to BREAK the habit use HARDMODE!!"
 "autoenable HARDMODE!! suxx. hardtime is better"
-  let g:hardtime_default_on = 1 
+"noremap <Up> <NOP>
+"noremap <Down> <NOP>
+"noremap <Left> <NOP>
+"noremap <Right> <NOP>
+let g:hardtime_default_on = 1 
 nnoremap <leader>h <Esc>:HardTimeToggle<CR>
 "options for vim session save. dont safe global and local settings"
 set ssop-=options
+"used for autocompleting brackets anduse Crtl+J for Jumping as in Latex-Suite!
+imap <C-J>      <Plug>MarkersJumpF
+map <C-J>      <Plug>MarkersJumpF
+
