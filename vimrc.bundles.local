@@ -5,3 +5,8 @@ Bundle "takac/vim-hardtime"
 Bundle "vim-latex/vim-latex"
 ""Bundle "gerw/vim-latex-suite"
 ""Bundle "Lokaltog/vim-easymotion"  "already :installed "
+"making autoclose brackets work in tex-files"
+Bundle 'LucHermitte/lh-vim-lib'
+Bundle 'LucHermitte/lh-tags'
+Bundle 'LucHermitte/lh-dev'
+Bundle 'LucHermitte/lh-brackets'
