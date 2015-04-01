@@ -167,7 +167,7 @@
 @    xaxis  bar on
 @    xaxis  bar color 1
 @    xaxis  bar linestyle 1
-@    xaxis  bar linewidth 1.0
+@    xaxis  bar linewidth 2.0
 @    xaxis  label ""
 @    xaxis  label layout para
 @    xaxis  label place auto
@@ -218,7 +218,7 @@
 @    yaxis  bar on
 @    yaxis  bar color 1
 @    yaxis  bar linestyle 1
-@    yaxis  bar linewidth 1.0
+@    yaxis  bar linewidth 2.0
 @    yaxis  label ""
 @    yaxis  label layout para
 @    yaxis  label place auto
