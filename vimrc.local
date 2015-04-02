@@ -39,4 +39,8 @@ set ssop-=options
 "used for autocompleting brackets anduse Crtl+J for Jumping as in Latex-Suite!
 imap <C-J>      <Plug>MarkersJumpF
 map <C-J>      <Plug>MarkersJumpF
-
+"color stuff and concealing options
+set cole=2
+let g:tex_conceal= 'agm'
+hi Conceal guibg=NONE guifg=turquoise1
+highlight Cursor guifg=white guibg=green
