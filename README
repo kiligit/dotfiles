@@ -4,6 +4,7 @@ ln -s ~/dofiles/de.utf-8.spl ~/.vim/spell/
 ln -s ~/dofiles/de.utf-8.sup ~/.vim/spell/
 ln -s ~/dofiles/en.utf-8.add ~/.vim/spell/
 "for latex fonts to work use "
+tlmgr init-usertree
 tlmgr info collection-fontsrecommended
 tlmgr install collection-fontsrecommended
 "DONT FORGET. Latex font names are different due to cp-right"
