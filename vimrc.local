@@ -27,11 +27,6 @@ set winaltkeys=no
 inoremap <silent> <A-l> <C-o>l
 inoremap <silent> <A-h> <C-o>h
 "disable arrow keys to BREAK the habit use HARDMODE!!"
-"autoenable HARDMODE!! suxx. hardtime is better"
-"noremap <Up> <NOP>
-"noremap <Down> <NOP>
-"noremap <Left> <NOP>
-"noremap <Right> <NOP>
 let g:hardtime_default_on = 1 
 nnoremap <leader>h <Esc>:HardTimeToggle<CR>
 "options for vim session save. dont safe global and local settings"
@@ -44,3 +39,22 @@ set cole=2
 let g:tex_conceal= 'agm'
 hi Conceal guibg=NONE guifg=turquoise1
 highlight Cursor guifg=white guibg=green
+"LATEX-SUITE Custom Macros
+augroup MyIMAPs
+au!
+au VimEnter * call IMAP('BRA', "\\bra{}<++>", 'tex')
+au VimEnter * call IMAP('KET', "\\ket{<++>}<++>", 'tex')
+au VimEnter * call IMAP('BRK', "\\braket{<++>}{<++>}<++>", 'tex')
+au VimEnter * call IMAP('OBRK', "\\obraket{<++>}{<++>}{<++>}<++>", 'tex')
+au VimEnter * call IMAP('COM', "\\left[<++>,<++>\\right]_{-}<++>", 'tex')
+au VimEnter * call IMAP('ACOM', "\\left[<++>,<++>\\right]_{+}<++>", 'tex')
+au VimEnter * call IMAP('C21', "\\left[<++><++>,<++>\\right]_{+}<++>", 'tex')
+au VimEnter * call IMAP('UP', "<++>^{+}_{<++>}", 'tex')
+au VimEnter * call IMAP('DW', "<++>_{<++>}", 'tex')
+au VimEnter * call IMAP('`s', "\\sum_{<++>}<++>", 'tex')
+"au VimEnter * call IMAP('`P', "^{\prime}<++>", 'tex')
+au VimEnter * call IMAP("`'", "^{\prime}<++>", 'tex')
+"au VimEnter * call IMAP("`#", "^{\prime}<++>", 'tex')
+au VimEnter * call IMAP('EA*','\begin{align*}<CR><++><CR>\label{eq:<++>}<CR>\end{align*}<++>','tex')
+augroup END
+
