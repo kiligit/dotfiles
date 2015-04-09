@@ -42,13 +42,14 @@ highlight Cursor guifg=white guibg=green
 "LATEX-SUITE Custom Macros
 augroup MyIMAPs
 au!
-au VimEnter * call IMAP('BRA', "\\bra{}<++>", 'tex')
+au VimEnter * call IMAP('BRA', "\\bra{<++>}<++>", 'tex')
 au VimEnter * call IMAP('KET', "\\ket{<++>}<++>", 'tex')
 au VimEnter * call IMAP('BRK', "\\braket{<++>}{<++>}<++>", 'tex')
 au VimEnter * call IMAP('OBRK', "\\obraket{<++>}{<++>}{<++>}<++>", 'tex')
 au VimEnter * call IMAP('COM', "\\left[<++>,<++>\\right]_{-}<++>", 'tex')
 au VimEnter * call IMAP('ACOM', "\\left[<++>,<++>\\right]_{+}<++>", 'tex')
 au VimEnter * call IMAP('C21', "\\left[<++><++>,<++>\\right]_{+}<++>", 'tex')
+au VimEnter * call IMAP('C12', "\\left[<++>,<++><++>\\right]_{+}<++>", 'tex')
 au VimEnter * call IMAP('UP', "<++>^{+}_{<++>}", 'tex')
 au VimEnter * call IMAP('DW', "<++>_{<++>}", 'tex')
 au VimEnter * call IMAP('`s', "\\sum_{<++>}<++>", 'tex')
