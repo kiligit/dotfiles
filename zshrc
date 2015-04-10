@@ -82,6 +82,8 @@ source $ZSH/oh-my-zsh.sh
 	if [[ -d ~/Apps/ ]] ; then source ~/Apps/; fi
 	if [[ -d ~/Dokumente/Disstex  ]]; then source ~/Dokumente/Disstex; fi
 	if [[ -d ~/scratch/  ]]; then source ~/scratch/;  fi
+    if [[ -d ~/Downloads/evince_synctex/ ]]; then source ~/Downloads/evince_synctex/;  fi
+
 
 
 xset b off
@@ -101,6 +103,8 @@ alias p='ps -ef |grep -i -v root'
 function x() {xmgrace $* &}
 function k() {kate $* &}
 function gv() {gvim $* &}
+function ev() {evince $* &}
+function mu() {mupdf $* &}
 alias ff='find . -name \*\!:1\* -print'
 alias mine='ps aux | grep USER | grep -v grep; ps aux|grep -i kilian |grep -v grep' 
 alias diskspace "du -S | sort -n -r |more"
