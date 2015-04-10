@@ -12,11 +12,18 @@ nnoremap <Leader>s :let @a=@" \| let @"=@+ \| let @+=@a<CR>
 autocmd InsertEnter * :set rnu! "disable relativenumber
 autocmd InsertLeave * :set rnu  "enable relativenumber
 function SetXeTex()
-    let g:Tex_CompileRule_pdf = 'xelatex --synctex=-1 -src-specials -interaction=nonstopmode $*'
+    let g:Tex_CompileRule_pdf = 'xelatex --synctex=1 -src-specials -interaction=nonstopmode $*'
 endfunction
 map <Leader>lx :<C-U>call SetXeTex()<CR>
-let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
+let g:latex_DefaultTargetFormat='pdf'
+let g:tex_DefaultTargetFormat='pdf'
+let g:latex_view_general_viewer = 'mupdf'
+let g:latex_view_method = 'mupdf'
+"let g:Tex_CompileRule_pdf = 'xelatex --synctex=1 -interaction=nonstopmode $*'
+let g:latex_view_general_options = shellescape('--synctex-forward "' . v:progname . ' --servername ' . v:servername . ' +{%line} {%file}"')
+"latex-suite seems to overwrite vimtex... so use this
+let g:Tex_ViewRule_pdf = 'open -a mupdf'
+let g:Tex_CompileRule_pdf = 'latexmk'
 "spell checking "
 set spell
 set spelllang=de,en
@@ -27,7 +34,7 @@ set winaltkeys=no
 inoremap <silent> <A-l> <C-o>l
 inoremap <silent> <A-h> <C-o>h
 "disable arrow keys to BREAK the habit use HARDMODE!!"
-let g:hardtime_default_on = 1 
+let g:hardtime_default_on = 1
 nnoremap <leader>h <Esc>:HardTimeToggle<CR>
 "options for vim session save. dont safe global and local settings"
 set ssop-=options
