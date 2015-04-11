@@ -14,13 +14,13 @@ $biber = 'biber --debug %O %S';
 # Default pdf viewer
 $pdf_previewer = 'mupdf %O %S';
 $pdf_previewer = 'start mupdf'
-# Extra file extensions to clean when latexmk -c or latexmk -C is used
-#$clean_ext = '%R.run.xml %R.synctex.gz';
-# How to make the PDF viewer update its display when the PDF file changes.  See the man page for a description of each method.
-#$pdf_update_method = 2;
+ Extra file extensions to clean when latexmk -c or latexmk -C is used
+$clean_ext = '%R.run.xml %R.synctex.gz';
+ How to make the PDF viewer update its display when the PDF file changes.  See the man page for a description of each method.
+$pdf_update_method = 2;
 
-# When PDF update method 2 is used, the number of the Unix signal to send
-#$pdf_update_signal = 'SIGHUP';
+ When PDF update method 2 is used, the number of the Unix signal to send
+$pdf_update_signal = 'SIGHUP';
 
-# If zero, check for a previously running previewer on the same file and update it.  If nonzero, always start a new previewer.
-#$new_viewer_always = 0;
+ If zero, check for a previously running previewer on the same file and update it.  If nonzero, always start a new previewer.
+$new_viewer_always = 0;
