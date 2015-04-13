@@ -11,23 +11,28 @@ nnoremap <Leader>s :let @a=@" \| let @"=@+ \| let @+=@a<CR>
 "visual mode:
 autocmd InsertEnter * :set rnu! "disable relativenumber
 autocmd InsertLeave * :set rnu  "enable relativenumber
-function SetXeTex()
-    let g:Tex_CompileRule_pdf = 'xelatex --synctex=1 -src-specials -interaction=nonstopmode $*'
-endfunction
-map <Leader>lx :<C-U>call SetXeTex()<CR>
-"get vimtex latexmk support via hotkeys
-nmap <Leader>xx :VimtexCompile<CR>
-nmap <Leader>xv :VimtexView<CR>
+"LATEX SECTION
+"function SetXeTex()
+    "let g:Tex_CompileRule_pdf = 'xelatex --synctex=1 -src-specials -interaction=nonstopmode $*'
+"endfunction
+"map <Leader>lx :<C-U>call SetXeTex()<CR>
+"get vimtex latexmk support via hotkeys USE VIMTEX - OPTIONS not tex->latex-su
+nmap <Leader>xc :VimtexCompile<CR>
+nmap <Leader>xv :VimtexView<CR> "
+"VimtexView opens new viewer everytime use this map to forward search"
+nnoremap <expr><buffer><silent><Leader>ff  ':!zathura --synctex-forward '.line(".").':'.col('.').':% ' . shellescape(g:vimtex#data[b:vimtex.id].out()) . '  >/dev/null<CR> <C-L>'
 let g:tex_flavor='latex'
-let g:latex_DefaultTargetFormat='pdf'
-let g:Tex_DefaultTargetFormat='pdf'
-let g:latex_view_general_viewer = 'mupdf'
-let g:latex_view_method = 'mupdf'
+"let g:latex_DefaultTargetFormat='pdf'
+"let g:Tex_DefaultTargetFormat='pdf'
+let g:vimtex_view_general_viewer='zathura'
+"let g:latex_view_method = 'mupdf'
 "let g:Tex_CompileRule_pdf = 'xelatex --synctex=1 -interaction=nonstopmode $*'
-let g:latex_view_general_options = shellescape('--synctex-forward "' . v:progname . ' --servername ' . v:servername . ' +{%line} {%file}"')
-"latex-suite seems to overwrite vimtex... so use this
-let g:Tex_ViewRule_pdf = 'open -a mupdf'
-"let g:Tex_CompileRule_pdf = 'latexmk' VimtexCompile calls latexmk 
+let g:latex_view_general_options = shellescape('--synctex-forward "' . exepath(v:progpath) . ' --servername ' . v:servername . ' +{%lline} {%ffile}"' . "--synctex-editor-command='gvim +%{line} %{input}'")
+let vimtex_quickfix_ignore_all_warnings=1
+"latex-suite disable [[ and quote mappings
+let g:Tex_SmartKeyBS = 0
+let g:Tex_SmartKeyQuote = 0
+"END LATEX SECTION
 "spell checking ]s=,- forward search, [s=,. backward search"
 set spell
 set spelllang=de,en
