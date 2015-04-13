@@ -105,6 +105,7 @@ function k() {kate $* &}
 function gv() {gvim $* &}
 function ev() {evince $* &}
 function mu() {mupdf $* &}
+function za() {zathura $* &}
 alias sapt='sudo apt-get $*'
 alias ff='find . -name \*\!:1\* -print'
 alias mine='ps aux | grep USER | grep -v grep; ps aux|grep -i kilian |grep -v grep' 
