@@ -1,7 +1,7 @@
 #$silent = 1;
 $dvi_mode = 0;
 $pdf_mode = 1;
-$preview_continuous_mode = 1;
+$preview_continuous_mode = 0;
 #
 # Choose xelatex as the default builder of pdfs, don't stop for errors, use synctex
 $pdflatex = 'xelatex -synctex=1 --shell-escape %O %S';
