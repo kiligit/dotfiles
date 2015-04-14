@@ -4,9 +4,14 @@ nnoremap <F13> i
 inoremap <F13> <Esc>l
 " inoremap ii <Esc>l
 vnoremap <F13> <Esc>l
-""nnoremap <Leader>s :let @x=@" \| let @"=@a \| let @a=@b \| let @b=@x<CR>
+nmap <silent> <leader>sv :so $MYVIMRC.local<CR>
+nnoremap <Leader>r :let @x=@" \| let @g=@* \| let @f=@+<CR>
 "nice map to cp XClipboard to 0 and 1 register"
-nnoremap <Leader>s :let @a=@" \| let @"=@+ \| let @+=@a<CR>
+"nnoremap <Leader>s :let @a=@" \| let @"=@+ \| let @+=@a<CR>
+"set some registers to stuff u want to use in the near future
+"vnoremap <Leader>sg :call Setreg('g', '$yq')
+let @a='\delta_{n,m} B^{+}_{m}'
+let @b='\delta_{n^{\prime},m} B^{+}_{n} \left(B_{m}B^{+}_{m}-B^{+}_{m}B_{m}\right)'
 "autocmd for relativenumber. absolute number in insert mode, relativenumber in
 "visual mode:
 autocmd InsertEnter * :set rnu! "disable relativenumber
@@ -83,12 +88,16 @@ au VimEnter * call IMAP('COM', "\\left[<++>,<++>\\right]_{-}<++>", 'tex')
 au VimEnter * call IMAP('ACOM', "\\left[<++>,<++>\\right]_{+}<++>", 'tex')
 au VimEnter * call IMAP('C21', "\\left[<++><++>,<++>\\right]_{+}<++>", 'tex')
 au VimEnter * call IMAP('C12', "\\left[<++>,<++><++>\\right]_{+}<++>", 'tex')
-au VimEnter * call IMAP('UP', "<++>^{+}_{<++>}", 'tex')
-au VimEnter * call IMAP('DW', "<++>_{<++>}", 'tex')
+au VimEnter * call IMAP('UP', "<++>^{+}_{<++>}<++>", 'tex')
+au VimEnter * call IMAP('DW', "<++>_{<++>}<++>", 'tex')
 au VimEnter * call IMAP('`s', "\\sum_{<++>}<++>", 'tex')
 "au VimEnter * call IMAP('`P', "^{\prime}<++>", 'tex')
-au VimEnter * call IMAP("`'", "^{\prime}<++>", 'tex')
+au VimEnter * call IMAP("`'", "^{\\prime}<++>", 'tex')
 "au VimEnter * call IMAP("`#", "^{\prime}<++>", 'tex')
 au VimEnter * call IMAP('EA*','\begin{align*}<CR><++><CR>\label{eq:<++>}<CR>\end{align*}<++>','tex')
 augroup END
 
+"filetype detection fix
+filetype indent on
+filetype plugin on
+"au FileType tex setlocal comments=s1:%
