@@ -16,22 +16,39 @@ autocmd InsertLeave * :set rnu  "enable relativenumber
     "let g:Tex_CompileRule_pdf = 'xelatex --synctex=1 -src-specials -interaction=nonstopmode $*'
 "endfunction
 "map <Leader>lx :<C-U>call SetXeTex()<CR>
-"get vimtex latexmk support via hotkeys USE VIMTEX - OPTIONS not tex->latex-su
-nmap <Leader>xc :VimtexCompile<CR>
-nmap <Leader>xv :VimtexView<CR> "
+"get vimtex latexmk support via hotkeys USE VIMTEX - use carefully!
+nmap <Leader><Space> :VimtexCompile<CR>
+nmap <Leader>v :VimtexView<CR>
+"function SyncZathura()
+    "let mainname= expand(Tex_GetMainFileName(':p:h'))
+    "echo mainname
+"endfunction
+let g:vimPath ='\usr\bin\gvim'
+"inverse search not working but forward search is GOOD!
+        map <leader>lj :execute '!cd ' . expand(Tex_GetMainFileName(':p:h')) .
+                    \' &&    zathura -x  "' . g:vimPath . ' --servername 'v:
+                    \servername'  --remote-wait +\%l \%f" --synctex-forward '
+                    \. line(".").":1:" . substitute(expand('%:p'),
+                    \expand(Tex_GetMainFileName(':p:h')).'\/','','') . 
+                    \" " . expand(Tex_GetMainFileName(':p:r')) . ".pdf
+                    \  &"<CR><CR>
 "VimtexView opens new viewer everytime use this map to forward search"
-nnoremap <expr><buffer><silent><Leader>ff  ':!zathura --synctex-forward '.line(".").':'.col('.').':% ' . shellescape(g:vimtex#data[b:vimtex.id].out()) . '  >/dev/null<CR> <C-L>'
+"nnoremap <expr><buffer><silent><leader>z  ':!zathura --synctex-forward '.line(".").':'.col('.').':% ' . shellescape(g: . ' >/dev/null<CR> <C-L>'
 let g:tex_flavor='latex'
-"let g:latex_DefaultTargetFormat='pdf'
-"let g:Tex_DefaultTargetFormat='pdf'
+let g:latex_DefaultTargetFormat='pdf'
+let g:Tex_DefaultTargetFormat='pdf'
+"let g:latex_view_method = 'zathura'
+let g:Tex_ViewRule_pdf = 'zathura'
+let g:Tex_CompileRule_pdf = 'xelatex --synctex=1 -interaction=nonstopmode $*'
+"vimtex latexmk. Be careful... latexmk is super wierd (infinte loops)
 let g:vimtex_view_general_viewer='zathura'
-"let g:latex_view_method = 'mupdf'
-"let g:Tex_CompileRule_pdf = 'xelatex --synctex=1 -interaction=nonstopmode $*'
-let g:latex_view_general_options = shellescape('--synctex-forward "' . exepath(v:progpath) . ' --servername ' . v:servername . ' +{%lline} {%ffile}"' . "--synctex-editor-command='gvim +%{line} %{input}'")
-let vimtex_quickfix_ignore_all_warnings=1
+let g:latex_view_general_options=shellescape('--synctex-forward "' . exepath(v:progpath) . ' --servername ' . v:servername . ' +{%lline} {%ffile}"')
+"ignore warnings in gcc output (latex)
+set errorformat^=%-G%f:%l:\ warning:%m
+"let vimtex_quickfix_ignore_all_warnings=1
 "latex-suite disable [[ and quote mappings
-let g:Tex_SmartKeyBS = 0
-let g:Tex_SmartKeyQuote = 0
+let g:Tex_SmartKeyBS=0
+let g:Tex_SmartKeyQuote=0
 "END LATEX SECTION
 "spell checking ]s=,- forward search, [s=,. backward search"
 set spell
@@ -43,7 +60,7 @@ set winaltkeys=no
 inoremap <silent> <A-l> <C-o>l
 inoremap <silent> <A-h> <C-o>h
 "disable arrow keys to BREAK the habit use HARDMODE!!"
-let g:hardtime_default_on = 1
+let g:hardtime_default_on=1
 nnoremap <leader>h <Esc>:HardTimeToggle<CR>
 "options for vim session save. dont safe global and local settings"
 set ssop-=options
@@ -52,7 +69,7 @@ imap <C-J>      <Plug>MarkersJumpF
 map <C-J>      <Plug>MarkersJumpF
 "color stuff and concealing options
 set cole=2
-let g:tex_conceal= 'agm'
+let g:tex_conceal='agm'
 hi Conceal guibg=NONE guifg=turquoise1
 highlight Cursor guifg=white guibg=green
 "LATEX-SUITE Custom Macros
