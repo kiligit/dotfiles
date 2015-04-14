@@ -17,11 +17,7 @@ let @b='\delta_{n^{\prime},m} B^{+}_{n} \left(B_{m}B^{+}_{m}-B^{+}_{m}B_{m}\righ
 autocmd InsertEnter * :set rnu! "disable relativenumber
 autocmd InsertLeave * :set rnu  "enable relativenumber
 "LATEX SECTION
-"function SetXeTex()
-    "let g:Tex_CompileRule_pdf = 'xelatex --synctex=1 -src-specials -interaction=nonstopmode $*'
-"endfunction
-"map <Leader>lx :<C-U>call SetXeTex()<CR>
-"get vimtex latexmk support via hotkeys USE VIMTEX - use carefully!
+"get vimtex latexmk support via hotkeys USE VIMTEX - use carefully!latexmkrc
 nmap <Leader><Space> :VimtexCompile<CR>
 nmap <Leader>v :VimtexView<CR>
 "function SyncZathura()
@@ -88,6 +84,7 @@ au VimEnter * call IMAP('COM', "\\left[<++>,<++>\\right]_{-}<++>", 'tex')
 au VimEnter * call IMAP('ACOM', "\\left[<++>,<++>\\right]_{+}<++>", 'tex')
 au VimEnter * call IMAP('C21', "\\left[<++><++>,<++>\\right]_{+}<++>", 'tex')
 au VimEnter * call IMAP('C12', "\\left[<++>,<++><++>\\right]_{+}<++>", 'tex')
+au VimEnter * call IMAP('C22', "\\left[<++><++>,<++><++>\\right]_{+}<++>", 'tex')
 au VimEnter * call IMAP('UP', "<++>^{+}_{<++>}<++>", 'tex')
 au VimEnter * call IMAP('DW', "<++>_{<++>}<++>", 'tex')
 au VimEnter * call IMAP('`s', "\\sum_{<++>}<++>", 'tex')
