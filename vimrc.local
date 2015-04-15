@@ -6,6 +6,13 @@ inoremap <F13> <Esc>l
 vnoremap <F13> <Esc>l
 nmap <silent> <leader>sv :so $MYVIMRC.local<CR>
 nnoremap <Leader>r :let @x=@" \| let @g=@* \| let @f=@+<CR>
+"Important Remap for unimpaired plugin:https://github.com/tpope/vim-unimpaired
+nmap ä [
+nmap ü ]
+omap ä [
+omap ü ]
+xmap ä [
+xmap ü ]
 "nice map to cp XClipboard to 0 and 1 register"
 "nnoremap <Leader>s :let @a=@" \| let @"=@+ \| let @+=@a<CR>
 "set some registers to stuff u want to use in the near future
@@ -35,12 +42,12 @@ let g:vimPath ='\usr\bin\gvim'
                     \  &"<CR><CR>
 "VimtexView opens new viewer everytime use this map to forward search"
 "nnoremap <expr><buffer><silent><leader>z  ':!zathura --synctex-forward '.line(".").':'.col('.').':% ' . shellescape(g: . ' >/dev/null<CR> <C-L>'
-let g:tex_flavor='latex'
-let g:latex_DefaultTargetFormat='pdf'
-let g:Tex_DefaultTargetFormat='pdf'
+let g:tex_flavor                = 'latex'
+let g:latex_DefaultTargetFormat = 'pdf'
+let g:Tex_DefaultTargetFormat   = 'pdf'
 "let g:latex_view_method = 'zathura'
-let g:Tex_ViewRule_pdf = 'zathura'
-let g:Tex_CompileRule_pdf = 'xelatex --synctex=1 -interaction=nonstopmode $*'
+let g:Tex_ViewRule_pdf    = 'zathura'
+let g:Tex_CompileRule_pdf = 'xelatex --synctex = 1 -interaction = nonstopmode $*'
 "vimtex latexmk. Be careful... latexmk is super wierd (infinte loops)
 let g:vimtex_view_general_viewer='zathura'
 let g:latex_view_general_options=shellescape('--synctex-forward "' . exepath(v:progpath) . ' --servername ' . v:servername . ' +{%lline} {%ffile}"')
@@ -48,8 +55,8 @@ let g:latex_view_general_options=shellescape('--synctex-forward "' . exepath(v:p
 set errorformat^=%-G%f:%l:\ warning:%m
 "let vimtex_quickfix_ignore_all_warnings=1
 "latex-suite disable [[ and quote mappings
-let g:Tex_SmartKeyBS=0
-let g:Tex_SmartKeyQuote=0
+let g:Tex_SmartKeyBS    = 0
+let g:Tex_SmartKeyQuote = 0
 "END LATEX SECTION
 "spell checking ]s=,- forward search, [s=,. backward search"
 set spell
@@ -82,9 +89,9 @@ au VimEnter * call IMAP('BRK', "\\braket{<++>}{<++>}<++>", 'tex')
 au VimEnter * call IMAP('OBRK', "\\obraket{<++>}{<++>}{<++>}<++>", 'tex')
 au VimEnter * call IMAP('COM', "\\left[<++>,<++>\\right]_{-}<++>", 'tex')
 au VimEnter * call IMAP('ACOM', "\\left[<++>,<++>\\right]_{+}<++>", 'tex')
-au VimEnter * call IMAP('C21', "\\left[<++><++>,<++>\\right]_{+}<++>", 'tex')
-au VimEnter * call IMAP('C12', "\\left[<++>,<++><++>\\right]_{+}<++>", 'tex')
-au VimEnter * call IMAP('C22', "\\left[<++><++>,<++><++>\\right]_{+}<++>", 'tex')
+au VimEnter * call IMAP('C21', "\\left[<++><++>,<++>\\right]_{-}<++>", 'tex')
+au VimEnter * call IMAP('C12', "\\left[<++>,<++><++>\\right]_{-}<++>", 'tex')
+au VimEnter * call IMAP('C22', "\\left[<++><++>,<++><++>\\right]_{-}<++>", 'tex')
 au VimEnter * call IMAP('UP', "<++>^{+}_{<++>}<++>", 'tex')
 au VimEnter * call IMAP('DW', "<++>_{<++>}<++>", 'tex')
 au VimEnter * call IMAP('`s', "\\sum_{<++>}<++>", 'tex')
