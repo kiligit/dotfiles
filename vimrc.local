@@ -13,12 +13,12 @@ omap ö [
 omap ä ]
 xmap ö [
 xmap ä ]
-"nice map to cp XClipboard to 0 and 1 register"
 "nnoremap <Leader>s :let @a=@" \| let @"=@+ \| let @+=@a<CR>
 "set some registers to stuff u want to use in the near future
 "vnoremap <Leader>sg :call Setreg('g', '$yq')
 let @a='\delta_{n,m} B^{+}_{m}'
 let @b='\delta_{n^{\prime},m} B^{+}_{n} \left(B_{m}B^{+}_{m}-B^{+}_{m}B_{m}\right)'
+let @c='\left(1-\delta_{n,n^{\prime}}\right) \delta_{n,m}D^{+}_{m}B^{+}_{m}B_{n^{\prime}}+\left(1-\delta_{n,n^{\prime}}\right) \delta_{n^{\prime},m}D^{+}_{n}\left(B_{m}B^{+}_{m}-B^{+}_{m}B_{m} \right)'
 "autocmd for relativenumber. absolute number in insert mode, relativenumber in
 "visual mode:
 autocmd InsertEnter * :set rnu! "disable relativenumber
@@ -105,3 +105,8 @@ augroup END
 filetype indent on
 filetype plugin on
 "au FileType tex setlocal comments=s1:%
+"latex surround mapping tests
+"ascii 45 = - echo char2nr("-")) to check for it. r=114
+let g:surround_45 = "\\\1environment: \1{\r}"
+autocmd FileType tex let b:surround_114 = "\\mathrm{\r}"
+
