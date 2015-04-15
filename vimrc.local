@@ -7,12 +7,12 @@ vnoremap <F13> <Esc>l
 nmap <silent> <leader>sv :so $MYVIMRC.local<CR>
 nnoremap <Leader>r :let @x=@" \| let @g=@* \| let @f=@+<CR>
 "Important Remap for unimpaired plugin:https://github.com/tpope/vim-unimpaired
-nmap ä [
-nmap ü ]
-omap ä [
-omap ü ]
-xmap ä [
-xmap ü ]
+nmap ö [
+nmap ä ]
+omap ö [
+omap ä ]
+xmap ö [
+xmap ä ]
 "nice map to cp XClipboard to 0 and 1 register"
 "nnoremap <Leader>s :let @a=@" \| let @"=@+ \| let @+=@a<CR>
 "set some registers to stuff u want to use in the near future
