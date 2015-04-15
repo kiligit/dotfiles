@@ -10,3 +10,5 @@ Bundle 'LucHermitte/lh-vim-lib'
 Bundle 'LucHermitte/lh-tags'
 Bundle 'LucHermitte/lh-dev'
 Bundle 'LucHermitte/lh-brackets'
+"some hotkeys, e.g. quickfix stuff
+Bundle 'tpope/vim-unimpaired'
