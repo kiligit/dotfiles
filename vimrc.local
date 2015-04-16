@@ -13,6 +13,9 @@ omap ö [
 omap ä ]
 xmap ö [
 xmap ä ]
+"Session mappings
+nnoremap <F2> :mksession! ~/vim_session <cr> " Quick write session with F2
+nnoremap <F3> :source ~/vim_session <cr>     " And load session with F3
 "nnoremap <Leader>s :let @a=@" \| let @"=@+ \| let @+=@a<CR>
 "set some registers to stuff u want to use in the near future
 "vnoremap <Leader>sg :call Setreg('g', '$yq')
@@ -94,8 +97,9 @@ au VimEnter * call IMAP('C12', "\\left[<++>,<++><++>\\right]_{-}<++>", 'tex')
 au VimEnter * call IMAP('C22', "\\left[<++><++>,<++><++>\\right]_{-}<++>", 'tex')
 au VimEnter * call IMAP('UP', "<++>^{+}_{<++>}<++>", 'tex')
 au VimEnter * call IMAP('DW', "<++>_{<++>}<++>", 'tex')
-au VimEnter * call IMAP('`s', "\\sum_{<++>}<++>", 'tex')
+"au VimEnter * call IMAP('`s', "\\sum_{<++>}<++>", 'tex') "already used = sigma
 "au VimEnter * call IMAP('`P', "^{\prime}<++>", 'tex')
+au VimEnter * call IMAP("`#", "^{\\star}<++>", 'tex')
 au VimEnter * call IMAP("`'", "^{\\prime}<++>", 'tex')
 "au VimEnter * call IMAP("`#", "^{\prime}<++>", 'tex')
 au VimEnter * call IMAP('EA*','\begin{align*}<CR><++><CR>\label{eq:<++>}<CR>\end{align*}<++>','tex')
@@ -109,4 +113,7 @@ filetype plugin on
 "ascii 45 = - echo char2nr("-")) to check for it. r=114
 let g:surround_45 = "\\\1environment: \1{\r}"
 autocmd FileType tex let b:surround_114 = "\\mathrm{\r}"
+autocmd FileType tex let b:surround_56 = "\\bigl(\r\\bigr)"
+autocmd FileType tex let b:surround_57 = "\\Bigl(\r\\Bigr)"
+autocmd FileType tex let b:surround_48 = "\\biggl(\r\\,biggr)"
 
