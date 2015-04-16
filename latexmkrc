@@ -6,8 +6,8 @@ $preview_continuous_mode = 0;
 # Choose xelatex as the default builder of pdfs, don't stop for errors, use synctex
 $pdflatex = 'xelatex -synctex=1 --shell-escape %O %S';
 
-# .bbl files assumed to be regeneratable, safe as long as the .bib file is available
-$bibtex_use = 2;
+# .bbl files assumed to be regeneratable, 0 - never, 1 if -f .bib, 2 automatic refresh
+$bibtex_use = 0;
 
 # User biber instead of bibtex
 $biber = 'biber --debug %O %S';
