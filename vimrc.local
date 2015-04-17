@@ -111,9 +111,10 @@ filetype plugin on
 "au FileType tex setlocal comments=s1:%
 "latex surround mapping tests
 "ascii 45 = - echo char2nr("-")) to check for it. r=114
-let g:surround_45 = "\\\1environment: \1{\r}"
-autocmd FileType tex let b:surround_114 = "\\mathrm{\r}"
-autocmd FileType tex let b:surround_56 = "\\bigl(\r\\bigr)"
-autocmd FileType tex let b:surround_57 = "\\Bigl(\r\\Bigr)"
-autocmd FileType tex let b:surround_48 = "\\biggl(\r\\,biggr)"
+let g:surround_45 = "\\\1environment: \1{\r}" "-
+let g:surround_252 = "\\begin{\1environment: \1}\r\\end{\1\1}" "ü
+autocmd FileType tex let b:surround_114 = "\\mathrm{\r}" "r
+autocmd FileType tex let b:surround_56 = "\\bigl(\r\\bigr)" "8
+autocmd FileType tex let b:surround_57 = "\\Bigl(\r\\Bigr)" "9
+autocmd FileType tex let b:surround_48 = "\\biggl(\r\\,biggr)" "0
 
