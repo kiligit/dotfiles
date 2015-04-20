@@ -34,15 +34,16 @@ nmap <Leader>v :VimtexView<CR>
     "let mainname= expand(Tex_GetMainFileName(':p:h'))
     "echo mainname
 "endfunction
-let g:vimPath ='\usr\bin\gvim'
+let g:vimPath ='/usr/bin/gvim'
+
 "inverse search not working but forward search is GOOD!
         map <leader>lj :execute '!cd ' . expand(Tex_GetMainFileName(':p:h')) .
                     \' &&    zathura -x  "' . g:vimPath . ' --servername 'v:
                     \servername'  --remote-wait +\%l \%f" --synctex-forward '
-                    \. line(".").":1:" . substitute(expand('%:p'),
+                  \. line(".").":1:" . expand(Tex_GetMainFileName(':p:h'))."/".substitute(expand('%:p'),
                     \expand(Tex_GetMainFileName(':p:h')).'\/','','') . 
                     \" " . expand(Tex_GetMainFileName(':p:r')) . ".pdf
-                    \  &"<CR><CR>
+                \  &"<CR><CR>
 "VimtexView opens new viewer everytime use this map to forward search"
 "nnoremap <expr><buffer><silent><leader>z  ':!zathura --synctex-forward '.line(".").':'.col('.').':% ' . shellescape(g: . ' >/dev/null<CR> <C-L>'
 let g:tex_flavor                = 'latex'
@@ -101,13 +102,14 @@ au VimEnter * call IMAP('DW', "<++>_{<++>}<++>", 'tex')
 "au VimEnter * call IMAP('`P', "^{\prime}<++>", 'tex')
 au VimEnter * call IMAP("`#", "^{\\star}<++>", 'tex')
 au VimEnter * call IMAP("`'", "^{\\prime}<++>", 'tex')
-"au VimEnter * call IMAP("`#", "^{\prime}<++>", 'tex')
+au VimEnter * call IMAP("`P", "\\Pi", 'tex')
 au VimEnter * call IMAP('EA*','\begin{align*}<CR><++><CR>\label{eq:<++>}<CR>\end{align*}<++>','tex')
 augroup END
 
 "filetype detection fix
 filetype indent on
 filetype plugin on
+au BufRead,BufNewFile *.tex     setfiletype tex
 "au FileType tex setlocal comments=s1:%
 "latex surround mapping tests
 "ascii 45 = - echo char2nr("-")) to check for it. r=114
@@ -117,4 +119,9 @@ autocmd FileType tex let b:surround_114 = "\\mathrm{\r}" "r
 autocmd FileType tex let b:surround_56 = "\\bigl(\r\\bigr)" "8
 autocmd FileType tex let b:surround_57 = "\\Bigl(\r\\Bigr)" "9
 autocmd FileType tex let b:surround_48 = "\\biggl(\r\\,biggr)" "0
+
+"NERDCommenter does not always work... change default C commenting
+let g:NERDCustomDelimiters = {
+        \ 'tex': { 'left': '%', 'leftAlt': 'FOO', 'rightAlt': 'BAR' },
+    \ }
 
