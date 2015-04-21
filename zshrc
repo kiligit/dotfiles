@@ -121,7 +121,9 @@ alias mendeley="python /home/kilian/Apps/mendeleydesktop-1.11-linux-x86_64/bin/m
 alias molden='~/Downloads/molden5.0/molden  &'
 alias q='ssh zappa "squeue -a"'
 alias lates='latexmk -silent'
-
+#rsync aliases
+alias syncSea='rsync -az ~/ /media/kilian/Seagate\ Backup\ Plus\ Drive/myunihome/'
+alias syncFree='rsync -avz ~/Dokumente /media/kilian/FreeAgent\ Drive/Dokumente'«»
 
 # DIs shit doesn work...
 #*MCTDH*A***********************************************************************
