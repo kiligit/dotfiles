@@ -122,6 +122,6 @@ autocmd FileType tex let b:surround_48 = "\\biggl(\r\\,biggr)" "0
 
 "NERDCommenter does not always work... change default C commenting
 let g:NERDCustomDelimiters = {
-        \ 'tex': { 'left': '%', 'leftAlt': 'FOO', 'rightAlt': 'BAR' },
+        \ 'tex': { 'left': '%', 'leftAlt': '%', 'rightAlt': '%' },
     \ }
 
