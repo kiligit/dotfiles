@@ -30,6 +30,7 @@ autocmd InsertLeave * :set rnu  "enable relativenumber
 "get vimtex latexmk support via hotkeys USE VIMTEX - use carefully!latexmkrc
 nmap <Leader><Space> :VimtexCompile<CR>
 nmap <Leader>v :VimtexView<CR>
+nmap <Leader>ls : VimtexStopAll<CR>
 "function SyncZathura()
     "let mainname= expand(Tex_GetMainFileName(':p:h'))
     "echo mainname
@@ -52,7 +53,9 @@ let g:Tex_DefaultTargetFormat   = 'pdf'
 "let g:latex_view_method = 'zathura'
 let g:Tex_ViewRule_pdf    = 'zathura'
 let g:Tex_CompileRule_pdf = 'xelatex --synctex = 1 -interaction = nonstopmode $*'
-"vimtex latexmk. Be careful... latexmk is super wierd (infinte loops)
+"vimtex latexmk. Be careful... latexmk is super wierd (infinte loops) disable
+"continuos mode
+let g:vimtex_latexmk_continuous=0
 let g:vimtex_view_general_viewer='zathura'
 let g:latex_view_general_options=shellescape('--synctex-forward "' . exepath(v:progpath) . ' --servername ' . v:servername . ' +{%lline} {%ffile}"')
 "ignore warnings in gcc output (latex)
