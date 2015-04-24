@@ -116,3 +116,6 @@ export MCTDH_DIR=/home/kilian/Downloads/mctdh85.2.2
 . $MCTDH_DIR/install/mctdh.profile
 if [ -f ~/.mctdhrc ] && [ -t 0 ] ; then . ~/.mctdhrc ; fi
 #*MCTDH*B***********************************************************************
+
+export NVM_DIR="/home/kilian/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
