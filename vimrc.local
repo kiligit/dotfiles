@@ -22,6 +22,9 @@ nnoremap <F3> :source ~/vim_session <cr>     " And load session with F3
 let @a='\delta_{n,m} B^{+}_{m}'
 let @b='\delta_{n^{\prime},m} B^{+}_{n} \left(B_{m}B^{+}_{m}-B^{+}_{m}B_{m}\right)'
 let @c='\left(1-\delta_{n,n^{\prime}}\right) \delta_{n,m}D^{+}_{m}B^{+}_{m}B_{n^{\prime}}+\left(1-\delta_{n,n^{\prime}}\right) \delta_{n^{\prime},m}D^{+}_{n}\left(B_{m}B^{+}_{m}-B^{+}_{m}B_{m} \right)'
+"x macro. = mark equation u want to replace n->k, m'->n. /e for NO ERROR!
+let @x=':s/_n/_k/gegv:s/_{n/_{k/gegv:s/n}/k}/gegv:s/m''/n/ge'
+
 "autocmd for relativenumber. absolute number in insert mode, relativenumber in
 "visual mode:
 autocmd InsertEnter * :set rnu! "disable relativenumber
@@ -56,6 +59,7 @@ let g:Tex_CompileRule_pdf = 'xelatex --synctex = 1 -interaction = nonstopmode $*
 "vimtex latexmk. Be careful... latexmk is super wierd (infinte loops) disable
 "continuos mode
 let g:vimtex_latexmk_continuous=0
+let g:vimtex_latexmk_background=1
 let g:vimtex_view_general_viewer='zathura'
 let g:latex_view_general_options=shellescape('--synctex-forward "' . exepath(v:progpath) . ' --servername ' . v:servername . ' +{%lline} {%ffile}"')
 "ignore warnings in gcc output (latex)
