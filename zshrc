@@ -82,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 	if [[ -d ~/Apps/ ]] ; then source ~/Apps/; fi
 	if [[ -d ~/Dokumente/Disstex  ]]; then source ~/Dokumente/Disstex; fi
 	if [[ -d ~/scratch/  ]]; then source ~/scratch/;  fi
-    if [[ -d ~/Downloads/evince_synctex/ ]]; then source ~/Downloads/evince_synctex/;  fi
+if [[ -d ~/Downloads/Atraci-Angular/build/Atraci/linux64/ ]]; then source ~/Downloads/Atraci-Angular/build/Atraci/linux64/; fi
 
 
 
@@ -106,6 +106,7 @@ function gv() {gvim $* &}
 function ev() {evince $* &}
 function mu() {mupdf $* &}
 function za() {zathura $* &}
+alias AtrA='~/Downloads/Atraci-Angular/build/Atraci/linux64/Atraci &'
 alias sapt='sudo apt-get $*'
 alias ff='find . -name \*\!:1\* -print'
 alias mine='ps aux | grep USER | grep -v grep; ps aux|grep -i kilian |grep -v grep' 
@@ -123,7 +124,7 @@ alias q='ssh zappa "squeue -a"'
 alias lates='latexmk -silent'
 #rsync aliases
 alias syncSea='rsync -az ~/ /media/kilian/Seagate\ Backup\ Plus\ Drive/myunihome/'
-alias syncFree='rsync -avz ~/Dokumente /media/kilian/FreeAgent\ Drive/Dokumente'«»
+alias syncFree='rsync -avz ~/Dokumente/ /media/kilian/FreeAgent\ Drive/Dokumente/'
 
 # DIs shit doesn work...
 #*MCTDH*A***********************************************************************
