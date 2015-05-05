@@ -110,7 +110,11 @@ au VimEnter * call IMAP('DW', "<++>_{<++>}<++>", 'tex')
 au VimEnter * call IMAP("`#", "^{\\star}<++>", 'tex')
 au VimEnter * call IMAP("`'", "^{\\prime}<++>", 'tex')
 au VimEnter * call IMAP("`P", "\\Pi", 'tex')
-au VimEnter * call IMAP('EA*','\begin{align*}<CR><++><CR>\label{eq:<++>}<CR>\end{align*}<++>','tex')
+au VimEnter * call IMAP('EA*',"\\begin{align*}\<CR><++>\<CR>\\label{eq:<++>}\<CR>\\end{align*}<++>",'tex')
+"call s:Tex_SpecialMacros('EFI', '', 'figure', "\<C-r>=Tex_PutEnvironment('figure')\<CR>")
+au VimEnter * call IMAP('EFF',
+ \"\\begin{figure}[h!]\<CR>\\centering\<CR>\\includegraphics[width=0.9\\textwidth]{<+figpath+>}\<CR>\\caption{<+caption+>}\<CR>\\label{fig:<+label+>}\<CR>\\end{figure}\<CR><++>",'tex')
+au VimEnter * call IMAP('REF',"$\\left( \\ref{<++>} \\right)$",'tex')
 augroup END
 
 "filetype detection fix
