@@ -19,6 +19,8 @@ nnoremap <F3> :source ~/vim_session <cr>     " And load session with F3
 "nnoremap <Leader>s :let @a=@" \| let @"=@+ \| let @+=@a<CR>
 "set some registers to stuff u want to use in the near future
 "vnoremap <Leader>sg :call Setreg('g', '$yq')
+"autoclose buggs out
+let g:autoclose_on = 0
 let @a='\delta_{n,m} B^{+}_{m}'
 let @b='\delta_{n^{\prime},m} B^{+}_{n} \left(B_{m}B^{+}_{m}-B^{+}_{m}B_{m}\right)'
 let @c='\left(1-\delta_{n,n^{\prime}}\right) \delta_{n,m}D^{+}_{m}B^{+}_{m}B_{n^{\prime}}+\left(1-\delta_{n,n^{\prime}}\right) \delta_{n^{\prime},m}D^{+}_{n}\left(B_{m}B^{+}_{m}-B^{+}_{m}B_{m} \right)'
@@ -115,6 +117,9 @@ au VimEnter * call IMAP('EA*',"\\begin{align*}\<CR><++>\<CR>\\label{eq:<++>}\<CR
 au VimEnter * call IMAP('EFF',
  \"\\begin{figure}[h!]\<CR>\\centering\<CR>\\includegraphics[width=0.9\\textwidth]{<+figpath+>}\<CR>\\caption{<+caption+>}\<CR>\\label{fig:<+label+>}\<CR>\\end{figure}\<CR>",'tex')
 au VimEnter * call IMAP('REF',"$\\left( \\ref{<++>} \\right)$",'tex')
+au VimEnter * call IMAP('FRA',"\\begin{frame}\<CR><++>\<CR>\\end{frame}",'tex')
+"Fortran Custom Macros
+au VimEnter * call IMAP('WR',"write(*,*)<++>",'')
 augroup END
 
 "filetype detection fix
