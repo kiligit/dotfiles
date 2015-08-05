@@ -32,18 +32,10 @@ umask 022
 #######################################################################
 # 
 # source CPU `uname -m`
-
-      
-      #echo 'There'
-      # Compiler environment f�r wpc10xx
-#     source /home/prog/intel/fce/9.1.036/bin/ifortvars.csh
-#      source /opt/bin
-#      source /opt/intel/Compiler/11.1/072/bin/ifortvars.csh intel64 
-
-      # some more stuff from .login
-	
-#       set prompt = "[%m]/%c> "
-#       source PRINTER duplex
+#
+setenv SHELL '/bin/zsh'
+exec /bin/zsh -l
+echo 'fuk tcsh'
 # BASH SYNTAX  export PATH={$PATH}:
 #         export PATH={$PATH}:/usr/local/sbin
 #         export PATH=${PATH}:/usr/local/bin
@@ -71,46 +63,3 @@ umask 022
 	setenv PATH  $PATH":~/Downloads/jpgfdraw-0.5.6b/bin/"
 	setenv PATH  $PATH":~/Apps/"
 	setenv PATH  $PATH":~/Dokumente/Disstex"
-	
-#setenv PATH  $PATH":~/Downloads/mctdh85.2.2"
-
-#*MCTDH*A***********************************************************************
-# Following lines written by install_mctdh.  Thu Apr 24 15:58:42 CEST 2014
-if ( -d ~/Downloads/mctdh85.2.2 ) then
-setenv MCTDH_DIR ~/Downloads/mctdh85.2.2
-source ~/Downloads/mctdh85.2.2/install/mctdh.profile.csh
-endif
-#*MCTDH*B***********************************************************************
-
-# 	setenv PATH  $PATH":/opt/mctdh/84.7/bin"
-# 	setenv PATH  $PATH":/opt/mctdh/84.7/bin/x86_64"
-
-# echo ~/.bash_aliases
-      if ( -f .tcsh_aliases ) then
-    source ~/.tcsh_aliases
-     endif
-
-
-setenv GREP_OPTIONS --color=auto
-setenv GREP_COLOR 32
-
-# xmodmap -e 'clear Lock'
-# xmodmap ~/.Xmodmap
-xset r rate 200 40	
-
-bindkey "\e[5~" history-search-backward		#syntax for tcsh
-bindkey "\e[6~" history-search-forward
-# bindkey -s "\e[25~" ""
-#disable beep sound
-#xset -b
-xset b off
-
-#xmodmap ~&.Xmodmap
-#xmodmap ~/.speedswapper
-# guake &
-
-#search history forward and backward
-#bindkey -k up history-search-backward
-#bindkey -k down history-search-forward
-#bindkey "^[n" history-search-forward
-#bindkey "^[p" history-search-backward 
