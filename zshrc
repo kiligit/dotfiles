@@ -7,6 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="kili"
 
+export SHELL=/bin/zsh
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -85,10 +86,15 @@ source $ZSH/oh-my-zsh.sh
 if [[ -d ~/Downloads/Atraci-Angular/build/Atraci/linux64/ ]]; then source ~/Downloads/Atraci-Angular/build/Atraci/linux64/; fi
 
 
-
+#if [ $HOST == "wtch028" ]; then
+#if [[ "$HOST" = wtch058]] then
+#fi
+case $HOST in
+(wtch058)
 xset b off
-xset r rate 200 40	
-
+xset r rate 200 40;;
+(*)   echo "I am on $HOST";;
+esac
 #disable beep sound
 
 # Example aliases
@@ -99,6 +105,8 @@ xset r rate 200 40
 
 #ALIASES
 ###
+#alias lsn='sort -h <(ls -t)'
+alias lt='ls -lht | head -n 20'
 alias p='ps -ef |grep -i -v root'
 function x() {xmgrace $* &}
 function k() {kate $* &}
@@ -106,6 +114,11 @@ function gv() {gvim $* &}
 function ev() {evince $* &}
 function mu() {mupdf $* &}
 function za() {zathura $* &}
+function zrose() {
+#ssh -Y kilian@rosemarie -t zsh "PWD; cd ~/fortran/; ls $PWD"
+#eval "vagrant ssh  \"cd /vagrant && $@\""
+ssh -Y kilian@rosemarie
+ls $PWD}
 alias AtrA='~/Downloads/Atraci-Angular/build/Atraci/linux64/Atraci &'
 alias sapt='sudo apt-get $*'
 alias ff='find . -name \*\!:1\* -print'
@@ -114,13 +127,15 @@ alias diskspace "du -S | sort -n -r |more"
 alias -g ONE="| awk '{ print \$1}'"
 alias -g G='| grep'
 alias -g M='| less'
+alias -g LgLmb='~/Dissdata/LambertData/*00*ps*  -world 0.01, 0, 2000, 1.1 -free -log x'
+alias -g LgBrx='~/Dissdata/CristinaData/NEWB00_21.6nJps.dat  ~/Dissdata/CristinaData/NEWB00_16.2nJps.dat  ~/Dissdata/CristinaData/NEWB00_10.8nJps.dat  ~/Dissdata/CristinaData/NEWB00_5.4nJps.dat  -world 0.01, 0, 2000, 1.1 -free -log x'
+alias -g LgBRe='~/Dissdata/CristinaData/B00Renorm30fs_21.6nJps.dat  ~/Dissdata/CristinaData/B00Renorm30fs_16.2nJps.dat  ~/Dissdata/CristinaData/B00Renorm30fs_10.8nJps.dat  ~/Dissdata/CristinaData/B00Renorm30fs_5.4nJps.dat  -world 0.01, 0, 2000, 1.1 -free -log x'
+
 #ssh sync stuff
-alias zappa='ssh -Y kilian@132.187.199.31'
-#alias backup='rsync -avzu -e ssh rkritzer.local@wpc1067:~/ /media/sjdfajsdf/'
-alias diskspace="du -S | sort -n -r |more"
+#alias diskspace="du -S | sort -n -r |more"
 alias mendeley="python /home/kilian/Apps/mendeleydesktop-1.11-linux-x86_64/bin/mendeleydesktop  &"
 alias molden='~/Downloads/molden5.0/molden  &'
-alias q='ssh zappa "squeue -a"'
+alias q='squeue -a'
 alias lates='latexmk -silent'
 function gitbund() {git bundle create $* master}
 #rsync aliases
@@ -141,3 +156,6 @@ alias syncFree='rsync -avz ~/Dokumente/ /media/kilian/FreeAgent\ Drive/Dokumente
 # if [ -f ~/.mctdhrc ] && [ -t 0 ] ; then . ~/.mctdhrc ; fi
 # fi
 #*MCTDH*B***********************************************************************
+#enable zsh mv command
+autoload -U zmv
+alias mmv='noglob zmv -W'
