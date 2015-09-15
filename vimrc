@@ -276,8 +276,8 @@
         map <C-L> <C-W>l<C-W>_
         map <C-H> <C-W>h<C-W>_
     endif " Wrapped lines goes down/up to next row, rather than next line in file.
-    noremap j gj
-    noremap k gk
+    "noremap j gj
+    "noremap k gk
 
     " End/Start of line motion keys act relative to row/wrap width in the
     " presence of `:set wrap`, and relative to line for `:set nowrap`.
