@@ -1,4 +1,10 @@
 "enable F13 to use it as ESC. F13 is mapped to CAPS by Xmodmap
+"type this if u get "trykey errors with mappings...." unmap <buffer> mapping
+silent!unmap <buffer> j
+silent!unmap <buffer> h
+silent!unmap <buffer> k
+silent!unmap <buffer> l
+
 set <F13>=^[[25~
 nnoremap <F13> i
 inoremap <F13> <Esc>l
@@ -14,8 +20,10 @@ omap ä ]
 xmap ö [
 xmap ä ]
 "Session mappings
-nnoremap <F2> :mksession! ~/vim_session <cr> " Quick write session with F2
-nnoremap <F3> :source ~/vim_session <cr>     " And load session with F3
+nnoremap <F2> :mksession! ~/vim_sessCode <cr> " Quick write session with F2
+nnoremap <F3> :source ~/vim_sessCode <cr>     " And load session with F3
+nnoremap <F6> :mksession! ~/vim_sessTex <cr> " Quick write session with F2
+nnoremap <F7> :source ~/vim_sessTex <cr>     " And load session with F3
 "nnoremap <Leader>s :let @a=@" \| let @"=@+ \| let @+=@a<CR>
 "set some registers to stuff u want to use in the near future
 "vnoremap <Leader>sg :call Setreg('g', '$yq')
@@ -26,6 +34,7 @@ let @b='\delta_{n^{\prime},m} B^{+}_{n} \left(B_{m}B^{+}_{m}-B^{+}_{m}B_{m}\righ
 let @c='\left(1-\delta_{n,n^{\prime}}\right) \delta_{n,m}D^{+}_{m}B^{+}_{m}B_{n^{\prime}}+\left(1-\delta_{n,n^{\prime}}\right) \delta_{n^{\prime},m}D^{+}_{n}\left(B_{m}B^{+}_{m}-B^{+}_{m}B_{m} \right)'
 "x macro. = mark equation u want to replace n->k, m'->n. /e for NO ERROR!
 let @x=':s/_n/_k/gegv:s/_{n/_{k/gegv:s/n}/k}/gegv:s/m''/n/ge'
+
 
 "autocmd for relativenumber. absolute number in insert mode, relativenumber in
 "visual mode:
@@ -81,8 +90,8 @@ set winaltkeys=no
 inoremap <silent> <A-l> <C-o>l
 inoremap <silent> <A-h> <C-o>h
 "disable arrow keys to BREAK the habit use HARDMODE!!"
-let g:hardtime_default_on=1
-nnoremap <leader>h <Esc>:HardTimeToggle<CR>
+"let g:hardtime_default_on=1
+"nnoremap <leader>h <Esc>:HardTimeToggle<CR>
 "options for vim session save. dont safe global and local settings"
 set ssop-=options
 "used for autocompleting brackets anduse Crtl+J for Jumping as in Latex-Suite!
