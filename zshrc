@@ -142,7 +142,8 @@ alias -g LgLmb='~/Dissdata/LambertData/Decay*00*ps*  -world 0.01, 0, 2000, 1.1 -
 alias -g LgLgL='~/Dissdata/LambertData/Decay*00*ps*  -world 0.01, 0.1, 2000, 1.1 -free -log x -log y'
 alias -g LgBrx='~/Dissdata/CristinaData/NEWB00_21.6nJps.dat  ~/Dissdata/CristinaData/NEWB00_16.2nJps.dat  ~/Dissdata/CristinaData/NEWB00_10.8nJps.dat  ~/Dissdata/CristinaData/NEWB00_5.4nJps.dat  -world 0.01, 0, 2000, 1.1 -free -log x -legend load -pexec "legend loctype world" -pexec "legend 0.01,1.37" -pexec "LEGEND CHAR SIZE 0.5"'
 alias -g LgBRe='~/Dissdata/CristinaData/B00Renorm30fs_21.6nJps.dat  ~/Dissdata/CristinaData/B00Renorm30fs_16.2nJps.dat  ~/Dissdata/CristinaData/B00Renorm30fs_10.8nJps.dat  ~/Dissdata/CristinaData/B00Renorm30fs_5.4nJps.dat  -world 0.01, 0, 2000, 1.1 -free -log x -legend load -pexec "legend loctype world" -pexec "legend 0.01,1.37" -pexec "LEGEND CHAR SIZE 0.5"'
-
+function rsyncto58() {rsync -avz $1 kilian@132.187.199.58:/home/kilian/$2}
+function rsyncfrom58() {rsync -avz kilian@132.187.199.58:/home/kilian/$1 $2}
 #ssh sync stuff
 #alias diskspace="du -S | sort -n -r |more"
 alias mendeley="python /home/kilian/Apps/mendeleydesktop-1.11-linux-x86_64/bin/mendeleydesktop  &"
@@ -153,6 +154,7 @@ function gitbund() {git bundle create $* master}
 #rsync aliases
 alias syncSea='rsync -az ~/ /media/kilian/Seagate\ Backup\ Plus\ Drive/myunihome/'
 alias syncFree='rsync -avz ~/Dokumente/ /media/kilian/FreeAgent\ Drive/Dokumente/'
+alias unissh='ssh -Y kilian@132.187.199.58'
 
 # DIs shit doesn work...
 #*MCTDH*A***********************************************************************
