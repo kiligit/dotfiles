@@ -1,9 +1,5 @@
 "enable F13 to use it as ESC. F13 is mapped to CAPS by Xmodmap
 "type this if u get "trykey errors with mappings...." unmap <buffer> mapping
-silent!unmap <buffer> j
-silent!unmap <buffer> h
-silent!unmap <buffer> k
-silent!unmap <buffer> l
 
 set <F13>=^[[25~
 nnoremap <F13> i
@@ -149,4 +145,10 @@ autocmd FileType tex let b:surround_48 = "\\biggl(\r\\,biggr)" "0
 let g:NERDCustomDelimiters = {
         \ 'tex': { 'left': '%', 'leftAlt': '%', 'rightAlt': '%' },
     \ }
+
+autocmd VimEnter * :silent!unmap <buffer> j
+autocmd VimEnter * :silent!unmap <buffer> h
+autocmd VimEnter * :silent!unmap <buffer> k
+autocmd VimEnter * :silent!unmap <buffer> l
+
 
