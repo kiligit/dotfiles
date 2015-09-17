@@ -64,6 +64,17 @@ fi
 if [ -d "/scratch/bin" ] ; then
     export PATH="/scratch/bin:$PATH"
 fi
+
+if [ -d "/usr/local/texlive/2015/bin/x86_64-linux" ] ; then
+    export PATH="/usr/local/texlive/2015/bin/x86_64-linux:$PATH"
+fi
+if [ -d "/usr/local/texlive/2015/texmf-dist/doc/info" ] ; then
+    export INFOPATH="/usr/local/texlive/2015/texmf-dist/doc/info:$INFOPATH"
+fi
+if [ -d "/usr/local/texlive/2015/texmf-dist/doc/man" ] ; then
+    export MANPATH="/usr/local/texlive/2015/texmf-dist/doc/man:$MANPATH"
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
