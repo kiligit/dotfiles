@@ -11,3 +11,5 @@ tlmgr install collection-fontsrecommended
 The TeX-GYRE bun­dle con­sists of six font fam­i­lies:
 http://www.ctan.org/tex-archive/fonts/tex-gyre
 tlmgr is used for tex-live font management
+Create a directory (~/.grace/template/) and coopy the XmgraceDefault.agr file
+cp xmgrDefault ~/.grace/templates/Default.agr
