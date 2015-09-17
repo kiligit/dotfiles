@@ -8,6 +8,9 @@ inoremap <F13> <Esc>l
 vnoremap <F13> <Esc>l
 nmap <silent> <leader>sv :so $MYVIMRC.local<CR>
 nnoremap <Leader>r :let @x=@" \| let @g=@* \| let @f=@+<CR>
+"noremap <leader><leader>u :unmap <buffer> h \| unmap <buffer> j\| unmap <buffer> k\|unmap <buffer> l
+noremap <leader><leader>u call Unmaphjkl()
+
 "Important Remap for unimpaired plugin:https://github.com/tpope/vim-unimpaired
 nmap ö [
 nmap ä ]
@@ -151,4 +154,9 @@ autocmd VimEnter * :silent!unmap <buffer> h
 autocmd VimEnter * :silent!unmap <buffer> k
 autocmd VimEnter * :silent!unmap <buffer> l
 
-
+function Unmaphjkl()
+     :silent!unmap <buffer> h
+     :silent!unmap <buffer> j
+     :silent!unmap <buffer> k
+     :silent!unmap <buffer> l
+endfunction
