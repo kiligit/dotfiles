@@ -10,6 +10,9 @@ nmap <silent> <leader>sv :so $MYVIMRC.local<CR>
 nnoremap <Leader>r :let @x=@" \| let @g=@* \| let @f=@+<CR>
 "noremap <leader><leader>u :unmap <buffer> h \| unmap <buffer> j\| unmap <buffer> k\|unmap <buffer> l
 noremap <leader><leader>u call Unmaphjkl()
+" F11 Hotkey to Full-Screen. need to have wmctrl installed!
+map <silent> <F11>
+\    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
 "Important Remap for unimpaired plugin:https://github.com/tpope/vim-unimpaired
 nmap ö [
