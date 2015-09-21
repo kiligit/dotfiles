@@ -13,3 +13,5 @@ http://www.ctan.org/tex-archive/fonts/tex-gyre
 tlmgr is used for tex-live font management
 Create a directory (~/.grace/template/) and coopy the XmgraceDefault.agr file
 cp xmgrDefault ~/.grace/templates/Default.agr
+"unter settings->system->shortcuts-> global keyboard shortcuts ->kwin
+Switch to Window to Left Alt+1, Switch to Window to Right Alt+2
