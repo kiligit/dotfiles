@@ -3,24 +3,27 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Dokumente/Disstex/chapters
+cd ~/Dokumente/Disstex
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 MayResults.tex
-badd +0 ~/Dokumente/Disstex/Th\#esis.tex
-badd +0 ~/Dokumente/Disstex/Thesis.tex
+badd +1 chapters/MayResults.tex
+badd +1 Th\#esis.tex
+badd +1 Thesis.tex
+badd +1 ~/Dokumente/Thesis.tex
+badd +1 backmatter/AnAppendix.tex
 argglobal
 silent! argdel *
-argadd MayResults.tex
-argadd ~/Dokumente/Disstex/Th\#esis.tex
+argadd chapters/MayResults.tex
+argadd Th\#esis.tex
 set stal=2
-edit MayResults.tex
+edit chapters/MayResults.tex
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
+edit chapters/MayResults.tex
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -30,12 +33,87 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 22 - ((21 * winheight(0) + 18) / 36)
+let s:l = 148 - ((25 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-22
-normal! 066|
+148
+normal! 0
+lcd ~/Dokumente/Disstex/chapters
+tabedit ~/Dokumente/Disstex/backmatter/AnAppendix.tex
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+edit ~/Dokumente/Disstex/backmatter/AnAppendix.tex
+setlocal fdm=manual
+setlocal fde=vimtex#fold#level(v:lnum)
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+13,20fold
+26,39fold
+44,60fold
+64,79fold
+83,87fold
+89,94fold
+100,113fold
+115,131fold
+133,148fold
+157,163fold
+168,173fold
+176,182fold
+185,194fold
+198,209fold
+213,222fold
+227,233fold
+4,238fold
+243,247fold
+251,273fold
+279,294fold
+296,301fold
+304,316fold
+320,333fold
+337,341fold
+239,342fold
+348,358fold
+361,372fold
+376,396fold
+399,416fold
+420,432fold
+436,449fold
+451,458fold
+343,494fold
+3,494fold
+3
+normal! zo
+4
+normal! zo
+4
+normal! zc
+239
+normal! zo
+239
+normal! zc
+343
+normal! zo
+420
+normal! zo
+436
+normal! zo
+451
+normal! zo
+let s:l = 374 - ((373 * winheight(0) + 19) / 38)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+374
+normal! 0
+lcd ~/Dokumente/Disstex/backmatter
 tabedit ~/Dokumente/Disstex/Thesis.tex
 set splitbelow splitright
 wincmd t
@@ -51,12 +129,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 30 - ((22 * winheight(0) + 18) / 36)
+let s:l = 34 - ((33 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-30
-normal! 04|
+34
+normal! 0
+lcd ~/Dokumente/Disstex
 tabnext 1
 set stal=1
 if exists('s:wipebuf')
