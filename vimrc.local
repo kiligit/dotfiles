@@ -19,10 +19,10 @@ omap ä ]
 xmap ö [
 xmap ä ]
 "Session mappings
-nnoremap <F2> :mksession! ~/vim_sessCode <cr> " Quick write session with F2
-nnoremap <F3> :source ~/vim_sessCode <cr>     " And load session with F3
-nnoremap <F6> :mksession! ~/vim_sessTex <cr> " Quick write session with F2
-nnoremap <F7> :source ~/vim_sessTex <cr>     " And load session with F3
+nnoremap <F2> :mksession! ~/dotfiles/vim_sessCode <cr> " Quick write session with F2
+nnoremap <F3> :source ~/dotfiles/vim_sessCode <cr>     " And load session with F3
+nnoremap <F6> :mksession! ~/dotfiles/vim_sessTex <cr> " Quick write session with F2
+nnoremap <F7> :source ~/dotfiles/vim_sessTex <cr>     " And load session with F3
 "nnoremap <Leader>s :let @a=@" \| let @"=@+ \| let @+=@a<CR>
 "set some registers to stuff u want to use in the near future
 "vnoremap <Leader>sg :call Setreg('g', '$yq')
