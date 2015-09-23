@@ -165,7 +165,7 @@ function gitbund() {git bundle create $* master}
 #rsync aliases
 alias syncSea='rsync -az ~/ /media/kilian/Seagate\ Backup\ Plus\ Drive/myunihome/'
 alias syncFree='rsync -avz ~/Dokumente/ /media/kilian/FreeAgent\ Drive/Dokumente/'
-alias unissh='ssh -Y kilian@132.187.199.58'
+alias unissh='ssh -Y kilian@132.187.199.58 -t zsh '
 
 # DIs shit doesn work...
 #*MCTDH*A***********************************************************************
