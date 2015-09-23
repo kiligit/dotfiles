@@ -3,27 +3,22 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Dokumente/Disstex
+cd ~/Dokumente/Disstex/chapters
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 chapters/MayResults.tex
-badd +1 Th\#esis.tex
-badd +1 Thesis.tex
-badd +1 ~/Dokumente/Thesis.tex
-badd +1 backmatter/AnAppendix.tex
+badd +1 ~/Dokumente/Disstex/Thesis.tex
+badd +1 MayResults.tex
+badd +0 ~/Dokumente/Disstex/backmatter/AnAppendix.tex
 argglobal
 silent! argdel *
-argadd chapters/MayResults.tex
-argadd Th\#esis.tex
 set stal=2
-edit chapters/MayResults.tex
+edit ~/Dokumente/Disstex/Thesis.tex
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-edit chapters/MayResults.tex
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -33,19 +28,39 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 148 - ((25 * winheight(0) + 19) / 38)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-148
-normal! 0
+1
+normal! 06|
+lcd ~/Dokumente/Disstex
+tabedit ~/Dokumente/Disstex/chapters/MayResults.tex
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 06|
 lcd ~/Dokumente/Disstex/chapters
 tabedit ~/Dokumente/Disstex/backmatter/AnAppendix.tex
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-edit ~/Dokumente/Disstex/backmatter/AnAppendix.tex
 setlocal fdm=manual
 setlocal fde=vimtex#fold#level(v:lnum)
 setlocal fmr={{{,}}}
@@ -114,29 +129,7 @@ normal! zt
 374
 normal! 0
 lcd ~/Dokumente/Disstex/backmatter
-tabedit ~/Dokumente/Disstex/Thesis.tex
-set splitbelow splitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-edit ~/Dokumente/Disstex/Thesis.tex
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 34 - ((33 * winheight(0) + 19) / 38)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-34
-normal! 0
-lcd ~/Dokumente/Disstex
-tabnext 1
+tabnext 3
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

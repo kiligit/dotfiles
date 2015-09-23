@@ -86,6 +86,7 @@ let g:Tex_SmartKeyQuote = 0
 "spell checking ]s=,- forward search, [s=,. backward search"
 set spell
 set spelllang=de,en
+set spellfile=~/.vim/spell/de.utf-8.add
 nnoremap <Leader>. [s
 noremap <Leader>- ]s
 "importan alt+h = help menu.must be disabeld!!!!!!!!!!"
