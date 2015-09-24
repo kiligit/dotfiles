@@ -8,7 +8,8 @@ inoremap <F13> <Esc>l
 vnoremap <F13> <Esc>l
 nmap <silent> <leader>sv :so $MYVIMRC.local<CR>
 nnoremap <Leader>r :let @x=@" \| let @g=@* \| let @f=@+<CR>
-let @q="5Gr26jr22jllr1lr0Gr2v$y:!./autnoname.sh 013klllr9:w:!./autoname.sh 0hr3lr4:w:!./autoname.sh 05Gr36jr32jllr1lr0Gr3v$y:w:!./autoname.sh 013klllr9:w:!./autoname.sh 0hr3lr4:w:!./autoname.sh 0"
+let @q="5Gr16jr12jllr1lr0Gr1v$y:w:!./autnoname.sh 013klllr9:w:!./autoname.sh 0hr3lr4:w:!./autoname.sh 05Gr26jr22jllr1lr0Gr2v$y:w:!./autoname.sh 013klllr9:w:!./autoname.sh 0hr3lr4:w:!./autoname.sh 05Gr36jr32jllr1lr0Gr3v$y:w:!./autnoname.sh 013klllr9:w:!./autoname.sh 0hr3lr4:w:!./autoname.sh 0"
+let @w="5Gr46jr42jllr1lr0Gr4v$y:w:!./autnoname.sh 013klllr9:w:!./autoname.sh 0hr3lr4:w:!./autoname.sh 05Gr56jr52jllr1lr0Gr5v$y:w:!./autoname.sh 013klllr9:w:!./autoname.sh 0hr3lr4:w:!./autoname.sh 05Gr66jr62jllr1lr0Gr6v$y:w:!./autnoname.sh 013klllr9:w:!./autoname.sh 0hr3lr4:w:!./autoname.sh 0"
 "noremap <leader><leader>u :unmap <buffer> h \| unmap <buffer> j\| unmap <buffer> k\|unmap <buffer> l
 noremap <leader><leader>u call Unmaphjkl()
 " F11 Hotkey to Full-Screen. need to have wmctrl installed!
