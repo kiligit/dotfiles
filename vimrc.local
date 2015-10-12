@@ -49,7 +49,7 @@ autocmd InsertLeave * :set rnu  "enable relativenumber
 nmap <Leader><Space> :VimtexCompile<CR>
 nmap <Leader>v :VimtexView<CR>
 nmap <Leader>ls : VimtexStopAll<CR>
-"function SyncZathura()
+"function! SyncZathura()
     "let mainname= expand(Tex_GetMainFileName(':p:h'))
     "echo mainname
 "endfunction
@@ -160,7 +160,7 @@ autocmd VimEnter * :silent!unmap <buffer> h
 autocmd VimEnter * :silent!unmap <buffer> k
 autocmd VimEnter * :silent!unmap <buffer> l
 
-function Unmaphjkl()
+function! Unmaphjkl()
      :silent!unmap <buffer> h
      :silent!unmap <buffer> j
      :silent!unmap <buffer> k
