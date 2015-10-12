@@ -134,8 +134,19 @@ au VimEnter * call IMAP('REF',"$\\left( \\ref{<++>} \\right)$",'tex')
 au VimEnter * call IMAP('FRA',"\\begin{frame}\<CR><++>\<CR>\\end{frame}",'tex')
 "Fortran Custom Macros
 au VimEnter * call IMAP('WR',"write(*,*)<++>",'')
+"au VimEnter * call IMAP('()', '()', 'tex')
+"au VimEnter * call IMAP('{}', '{}', 'tex')
+"au VimEnter * call IMAP('[]', '[]', 'tex')
+"au VimEnter * call IMAP('::', '::', 'tex')
+"au VimEnter * call IMAP('{{', '{{', 'tex')
+"au VimEnter * call IMAP('((', '((', 'tex')
+"au VimEnter * call IMAP('[[', '[[', 'tex')
+"au VimEnter * call IMAP('$$', '$$', 'tex')
+"unset annoying stuff
 augroup END
-
+"let g:Tex_SmartKeyBS = 0
+"let g:Tex_SmartKeyQuote = 0
+"let g:Tex_SmartKeyDot = 0
 "filetype detection fix
 filetype indent on
 filetype plugin on
