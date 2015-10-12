@@ -5,6 +5,7 @@ ln -s ~/dofiles/de.utf-8.sup ~/.vim/spell/
 ln -s ~/dofiles/en.utf-8.add ~/.vim/spell/
 "if oh.my.zsh is installed to path to link your theme is
 ln -s ~/dotfiles/kili.zsh-theme ~/.oh-my-zsh/themes/
+ln -s ~/dotfiles/zshenv ~/.zshenv
 Create a directory (~/.grace/template/) and LINK the XmgraceDefault.agr file
 ln -s ~/dotfiles/xmgrDefault ~/.grace/templates/Default.agr
 "###############local stuff. do by hand######################"
