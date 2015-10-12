@@ -131,6 +131,7 @@ esac
 #alias lsn='sort -h <(ls -t)'
 alias lt='ls -lht | head -n 30'
 alias p='ps -ef |grep -i -v root'
+function calc(){ awk "BEGIN{ print $* }" ;}
 function x() {xmgrace $* &}
 function k() {kate $* &}
 function gv() {gvim $* &}
