@@ -31,7 +31,7 @@ function rsyncfrom58() {rsync -avz kilian@132.187.199.58:/home/kilian/$1 $2}
 #alias diskspace="du -S | sort -n -r |more"
 alias mendeley="python /home/kilian/Apps/mendeleydesktop-1.11-linux-x86_64/bin/mendeleydesktop  &"
 alias molden='~/Downloads/molden5.0/molden  &'
-alias q='squeue -all'
+alias q='squeue -o "%.7i %.6P %.50j %.8u %.2t %.10M %.9l %.3D %R"'
 alias lates='latexmk -silent'
 function gitbund() {git bundle create $* master}
 #rsync aliases
