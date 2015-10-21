@@ -1,9 +1,9 @@
 ###
 #alias lsn='sort -h <(ls -t)'
-alias lt='ls -lht | head -n 30'
+alias lt='ls -lht --color=tty| head -n 30 '
 alias p='ps -ef |grep -i -v root'
 function calc(){ awk "BEGIN{ print $* }" ;}
-function x() {xmgrace $* &}
+function x() {xmgrace $* -free &}
 function k() {kate $* &}
 function gv() {gvim $* &}
 function ev() {evince $* &}
@@ -33,7 +33,8 @@ alias mendeley="python /home/kilian/Apps/mendeleydesktop-1.11-linux-x86_64/bin/m
 alias molden='~/Downloads/molden5.0/molden  &'
 alias q='squeue -o "%.7i %.6P %.50j %.8u %.2t %.10M %.9l %.3D %R"'
 alias lates='latexmk -silent'
-function gitbund() {git bundle create $* master}
+function gitbunddaheim() {git bundle create ~/Dokumente/daheim.bundle ^unihome/master --branches --tags}
+function gitbunduni() {git bundle create ~/Dokumente/unihome.bundle ^daheim/master --branches --tags}
 #rsync aliases
 alias syncSea='rsync -az ~/ /media/kilian/Seagate\ Backup\ Plus\ Drive/myunihome/'
 alias syncFree='rsync -avz ~/Dokumente/ /media/kilian/FreeAgent\ Drive/Dokumente/'
