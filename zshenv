@@ -10,6 +10,7 @@ function gv() {gvim $* &}
 function ev() {evince $* &}
 function mu() {mupdf $* &}
 function za() {zathura $* &}
+function fixbb() {~/Dokumente/fixbbox.sh $*}
 function zrose() {
 ssh -Y kilian@rosemarie -t zsh 
 #ssh -Y kilian@rosemarie
