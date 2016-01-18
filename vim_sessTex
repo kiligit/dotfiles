@@ -3,14 +3,15 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Dokumente/Disstex/chapters
+cd ~/Dokumente/Disstex/backmatter
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 badd +1 ~/Dokumente/Disstex/Thesis.tex
-badd +1 MayResults.tex
-badd +0 ~/Dokumente/Disstex/backmatter/AnAppendix.tex
+badd +1 ~/Dokumente/Disstex/chapters/MayResults.tex
+badd +374 AnAppendix.tex
+badd +0 ~/Dokumente/Disstex/theory/basicQM.tex
 argglobal
 silent! argdel *
 set stal=2
@@ -28,12 +29,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 19) / 38)
+let s:l = 22 - ((21 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 06|
+22
+normal! 018|
 lcd ~/Dokumente/Disstex
 tabedit ~/Dokumente/Disstex/chapters/MayResults.tex
 set splitbelow splitright
@@ -49,12 +50,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 19) / 38)
+let s:l = 588 - ((14 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 06|
+588
+normal! 074|
 lcd ~/Dokumente/Disstex/chapters
 tabedit ~/Dokumente/Disstex/backmatter/AnAppendix.tex
 set splitbelow splitright
@@ -71,56 +72,44 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 13,20fold
+12,22fold
 26,39fold
 44,60fold
 64,79fold
 83,87fold
-89,94fold
-100,113fold
-115,131fold
-133,148fold
-157,163fold
-168,173fold
-176,182fold
-185,194fold
-198,209fold
-213,222fold
-227,233fold
-4,238fold
-243,247fold
-251,273fold
-279,294fold
-296,301fold
-304,316fold
-320,333fold
-337,341fold
-239,342fold
-348,358fold
-361,372fold
-376,396fold
-399,416fold
-420,432fold
-436,449fold
-451,458fold
-343,494fold
-3,494fold
+90,95fold
+101,114fold
+116,132fold
+134,149fold
+158,164fold
+169,174fold
+177,183fold
+186,195fold
+199,210fold
+214,223fold
+228,234fold
+4,239fold
+244,248fold
+252,274fold
+251,275fold
+280,295fold
+297,302fold
+305,317fold
+321,334fold
+338,342fold
+240,343fold
+349,359fold
+362,373fold
+377,397fold
+400,417fold
+421,433fold
+437,450fold
+452,459fold
+344,495fold
+3,495fold
 3
 normal! zo
-4
-normal! zo
-4
-normal! zc
-239
-normal! zo
-239
-normal! zc
-343
-normal! zo
-420
-normal! zo
-436
-normal! zo
-451
+344
 normal! zo
 let s:l = 374 - ((373 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
@@ -129,7 +118,160 @@ normal! zt
 374
 normal! 0
 lcd ~/Dokumente/Disstex/backmatter
-tabnext 3
+tabedit ~/Dokumente/Disstex/theory/basicQM.tex
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=vimtex#fold#level(v:lnum)
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+7,10fold
+11,13fold
+19,21fold
+23,27fold
+30,32fold
+41,44fold
+46,48fold
+51,54fold
+58,60fold
+63,65fold
+68,70fold
+72,74fold
+76,78fold
+80,83fold
+85,88fold
+91,94fold
+98,100fold
+103,105fold
+107,111fold
+114,117fold
+119,125fold
+127,130fold
+132,134fold
+137,139fold
+2,142fold
+146,149fold
+154,157fold
+162,165fold
+171,174fold
+176,179fold
+185,190fold
+194,196fold
+198,200fold
+202,204fold
+205,209fold
+211,214fold
+218,221fold
+222,225fold
+226,229fold
+230,233fold
+217,234fold
+168,240fold
+249,251fold
+253,256fold
+257,260fold
+252,261fold
+268,273fold
+280,283fold
+275,284fold
+267,285fold
+288,290fold
+241,294fold
+298,301fold
+303,305fold
+309,311fold
+312,314fold
+316,318fold
+320,322fold
+324,326fold
+329,331fold
+328,332fold
+334,336fold
+340,342fold
+345,348fold
+352,355fold
+359,362fold
+363,366fold
+369,371fold
+374,376fold
+295,383fold
+391,393fold
+395,397fold
+399,401fold
+403,405fold
+407,412fold
+414,416fold
+418,421fold
+422,425fold
+427,430fold
+384,448fold
+143,448fold
+453,456fold
+458,460fold
+462,464fold
+466,468fold
+472,474fold
+476,480fold
+483,486fold
+489,491fold
+493,496fold
+450,497fold
+503,505fold
+507,509fold
+511,514fold
+516,523fold
+526,528fold
+530,532fold
+534,537fold
+540,542fold
+543,545fold
+550,554fold
+556,558fold
+560,562fold
+564,566fold
+569,571fold
+573,579fold
+582,585fold
+498,588fold
+593,595fold
+596,598fold
+600,602fold
+589,610fold
+449,610fold
+1,610fold
+1
+normal! zo
+449
+normal! zo
+450
+normal! zo
+450
+normal! zc
+589
+normal! zo
+593
+normal! zo
+596
+normal! zo
+600
+normal! zo
+589
+normal! zc
+let s:l = 645 - ((23 * winheight(0) + 19) / 38)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+645
+normal! 047|
+lcd ~/Dokumente/Disstex/theory
+tabnext 2
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

@@ -4,6 +4,7 @@ alias lt='ls -lht --color=tty| head -n 30 '
 alias p='ps -ef |grep -i -v root'
 function calc(){ awk "BEGIN{ print $* }" ;}
 function x() {xmgrace $* -free &}
+function xb() {xmgrace -batch $* -free &}
 function k() {kate $* &}
 function gv() {gvim $* &}
 function ev() {evince $* &}
