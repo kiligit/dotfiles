@@ -1,6 +1,7 @@
 ###
 #alias lsn='sort -h <(ls -t)'
 alias lt='ls -lht --color=tty| head -n 30 '
+alias lsd="ls -lht | grep '^d'"
 alias p='ps -ef |grep -i -v root'
 function calc(){ awk "BEGIN{ print $* }" ;}
 function x() {xmgrace $* -free &}
