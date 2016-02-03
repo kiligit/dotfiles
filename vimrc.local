@@ -185,3 +185,5 @@ function! Unmaphjkl()
      :silent!unmap <buffer> k
      :silent!unmap <buffer> l
 endfunction
+"wildfire plugin
+nmap <leader>s <Plug>(wildfire-quick-select)
