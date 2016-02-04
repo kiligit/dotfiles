@@ -9,10 +9,10 @@ vnoremap <F13> <Esc>l
  if has("gui_running")
        "echo "GUI mode -> Caps Lock = F13 = ESC!"
     else
-       "echo "Console use i and Crtl+I"
-nnoremap <C-i> i
-inoremap <C-i> <Esc>l
-vnoremap <C-i> <Esc>l
+       "echo "Console use tab"
+nnoremap <Tab> i
+inoremap <Tab> <Esc>l
+vnoremap <Tab> <Esc>l
     endif
 nmap <silent> <leader>sv :so $MYVIMRC.local<CR>
 nnoremap <Leader>r :let @x=@" \| let @g=@* \| let @f=@+<CR>
@@ -185,3 +185,5 @@ function! Unmaphjkl()
      :silent!unmap <buffer> k
      :silent!unmap <buffer> l
 endfunction
+"wildfire plugin
+nmap <leader>s <Plug>(wildfire-quick-select)

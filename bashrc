@@ -111,12 +111,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export NVM_DIR="/home/kilian/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 PS1="\[\033[0;37m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[0;31m\]\h'; else echo '\[\033[0;33m\]\u\[\033[0;37m\]@\[\033[0;96m\]\h'; fi)\[\033[0;37m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;37m\]]\n\[\033[0;37m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]"
 #*MCTDH*A***********************************************************************
-# Following lines written by install_mctdh.  Wed Feb  3 14:48:01 CET 2016
-export MCTDH_DIR=/home/kilian/Downloads/mctdh84.11
+# Following lines written by install_mctdh.  Tue Feb  2 10:53:44 CET 2016
+export MCTDH_DIR="$HOME/Downloads/mctdh84.11"
 . $MCTDH_DIR/install/mctdh.profile
 if [ -f ~/.mctdhrc ] && [ -t 0 ] ; then . ~/.mctdhrc ; fi
 #*MCTDH*B***********************************************************************
