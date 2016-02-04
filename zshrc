@@ -48,6 +48,18 @@ export SHELL=/bin/zsh
 #plugins=(git)
 plugins=(git history-substring-search.zsh)
 
+#*MCTDH*A***********************************************************************
+# Following lines written by install_mctdh.  Thu Mar 19 15:58:06 CET 2015
+if [ -d ~/Downloads/mctdh84.11 ]; then
+export MCTDH_DIR="$HOME/Downloads/mctdh84.11"
+   # correct ZSH-syntax=   export PATH="$HOME/bin:$PATH"
+source $MCTDH_DIR/install/mctdh.profile
+#copied $PATH from bash... seems to work
+#$HOME/Downloads/mctdh84.11/bin/binary/x86_64:$HOME/Downloads/mctdh84.11/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/local/sbin:/opt/bin:/apps/thread-checker/3.1/tcheck/bin/32:/opt/mctdh/84.7:/opt/mctdh/84.7/bin:/opt/mctdh/84.7/bin/x86_64
+export PATH="$HOME/Downloads/mctdh84.11/bin/binary/x86_64:$HOME/Downloads/mctdh84.11/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/local/sbin:/opt/bin:/apps/thread-checker/3.1/tcheck/bin/32:/opt/mctdh/84.7:/opt/mctdh/84.7/bin:/opt/mctdh/84.7/bin/x86_64:$PATH"
+fi
+if [ -f $HOME/.mctdhrc ] && [ -t 0 ] ; then . $HOME/.mctdhrc ; fi
+#*MCTDH*B***********************************************************************
 # User configuration
 if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
@@ -117,25 +129,11 @@ esac
 #disable beep sound
 # Example aliases
 # echo ~/.bash_aliases
-    if [[ -f .zsh_aliases ]] then
+    if [[ -f .zsh_aliases ]]; then
     source ~/.zsh_aliases
     fi
 #ALIASES and functions are in ~/.zshenv
 
-# DIs shit doesn work...
-#*MCTDH*A***********************************************************************
-# Following lines written by install_mctdh.  Thu Mar 19 15:58:06 CET 2015
-# if [[ -d ~/Downloads/mctdh85.2.2]] then
-#source ~/.profile
-# MCTDH_DIR=/home/kilian/Downloads/mctdh85.2.2
-# export MCTDH_DIR
-# source /home/kilian/Downloads/mctdh85.2.2/install/mctdh.profile
-# if [ -f ~/.mctdhrc ] ; then . ~/.mctdhrc ; fi
-# export MCTDH_DIR=/Downloads/mctdh85.2.2
-# . $MCTDH_DIR/install/mctdh.profile
-# if [ -f ~/.mctdhrc ] && [ -t 0 ] ; then . ~/.mctdhrc ; fi
-# fi
-#*MCTDH*B***********************************************************************
 #enable zsh mv command
 autoload -U zmv
 alias mmv='noglob zmv -W'
