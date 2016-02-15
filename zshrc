@@ -139,3 +139,4 @@ esac
 #enable zsh mv command
 autoload -U zmv
 alias mmv='noglob zmv -W'
+bindkey -s "\e[25~" ""
