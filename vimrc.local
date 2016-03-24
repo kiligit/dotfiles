@@ -41,11 +41,11 @@ nnoremap <F7> :source ~/dotfiles/vim_sessTex <cr>     " And load session with F3
 "vnoremap <Leader>sg :call Setreg('g', '$yq')
 "autoclose buggs out
 let g:autoclose_on = 0
-let @a='\delta_{n,m} B^{+}_{m}'
-let @b='\delta_{n^{\prime},m} B^{+}_{n} \left(B_{m}B^{+}_{m}-B^{+}_{m}B_{m}\right)'
-let @c='\left(1-\delta_{n,n^{\prime}}\right) \delta_{n,m}D^{+}_{m}B^{+}_{m}B_{n^{\prime}}+\left(1-\delta_{n,n^{\prime}}\right) \delta_{n^{\prime},m}D^{+}_{n}\left(B_{m}B^{+}_{m}-B^{+}_{m}B_{m} \right)'
+let @a='A"'
+"let @b='\delta_{n^{\prime},m} B^{+}_{n} \left(B_{m}B^{+}_{m}-B^{+}_{m}B_{m}\right)'
+"let @c='\left(1-\delta_{n,n^{\prime}}\right) \delta_{n,m}D^{+}_{m}B^{+}_{m}B_{n^{\prime}}+\left(1-\delta_{n,n^{\prime}}\right) \delta_{n^{\prime},m}D^{+}_{n}\left(B_{m}B^{+}_{m}-B^{+}_{m}B_{m} \right)'
 "x macro. = mark equation u want to replace n->k, m'->n. /e for NO ERROR!
-let @x=':s/_n/_k/gegv:s/_{n/_{k/gegv:s/n}/k}/gegv:s/m''/n/ge'
+"let @x=':s/_n/_k/gegv:s/_{n/_{k/gegv:s/n}/k}/gegv:s/m''/n/ge'
 
 
 "autocmd for relativenumber. absolute number in insert mode, relativenumber in
@@ -178,6 +178,16 @@ autocmd VimEnter * :silent!unmap <buffer> j
 autocmd VimEnter * :silent!unmap <buffer> h
 autocmd VimEnter * :silent!unmap <buffer> k
 autocmd VimEnter * :silent!unmap <buffer> l
+
+function! CopyRx(start)
+:norm:let @0=a:start:g/Time :\_s*0.000ma:b2nmd:g/Time :\_s*=0-1.000mcV`dkk"py:b1nOset multiplot layout 1,2 scale 1.4,1.4`akk"pp`]ounset multiplot
+endfunction
+function! CopyRxend(end)
+:norm:let @0=a:end:b2:g/Time :\_s*0.000VG"py:b1nOset multiplot layout 1,2 scale 1.4,1.4G"pp`]ounset multiplot
+endfunction
+"nmap <silent><Plug>CopyPastaRx :call CopyRx()<CR>
+            "\:call repeat#set("\<Plug>CopyPastaRx")<CR>
+"nmap <Leader>cf <Plug>CopyPastaRx
 
 function! Unmaphjkl()
      :silent!unmap <buffer> h

@@ -33,6 +33,8 @@ alias mine='ps aux | grep USER | grep -v grep; ps aux|grep -i kilian |grep -v gr
 alias diskspace "du -S | sort -n -r |more"
 alias -g ONE="| awk '{ print \$1}'"
 alias -g G='| grep'
+alias -g H='| head -n'
+alias -g T='| tail -n'
 alias -g M='| less'
 alias -g LgLmb='~/Dissdata/LambertData/Decay*00*ps*  -world 0.01, 0, 2000, 1.1 -free -log x -legend load -pexec "legend loctype world" -pexec "legend 0.01,1.37" -pexec "LEGEND CHAR SIZE 0.5"'
 alias -g LgLgL='~/Dissdata/LambertData/Decay*00*ps*  -world 0.01, 0.1, 2000, 1.1 -free -log x -log y'
