@@ -13,14 +13,15 @@ echo basename=$basename, filetype=$filetype
 outnodot=${basename:gs/./_/}'.pdf'
 echo 'inputpdf='$inputpdf
 #echo not dots:$outnodot
-for ((ii=1; ii<=$pageno;ii++));
+for ((ii=0; ii<=$pageno;ii++));
 do
-echo pintloop, pagenumber=$(printf "%0*d" 2 $ii)
-echo ":g/%%Title:f:c$: $basename"$(printf "%0*d" 2 $ii)'fs:wq'> tmpvimfile
+time=$(($ii+1))
+echo pintloop, pagenumber=$(printf "%0*d" 2 $time)
+echo ":g/%%Title:f:c$: $basename"$(printf "%0*d" 2 $time)'fs:wq'> tmpvimfile
 #echo ":g/%%Title:f:c$: $basename$ii"'fs:wq' > tmpvimfile
 vim -n -u NONE --noplugin -X -s tmpvimfile $inputpdf
 #sed -i "s/Title: dummy/Title: $basename$ii.pdf/g" $inputpdf
-lpr -P PDF -o page-ranges="$ii" -o fit-to-page -o landscape "$inputpdf"
+lpr -P PDF -o page-ranges="$time" -o fit-to-page -o landscape "$inputpdf"
 #sed -i "s/Title: $basename$ii.pdf/Title: dummy/g" $inputpdf
 #cd ~/PDF
 #ls $outnodot
