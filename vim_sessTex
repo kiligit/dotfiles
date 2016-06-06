@@ -3,15 +3,18 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Dokumente/Disstex/backmatter
+cd ~/Dokumente/Disstex/chapters
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 badd +1 ~/Dokumente/Disstex/Thesis.tex
-badd +1 ~/Dokumente/Disstex/chapters/MayResults.tex
-badd +374 AnAppendix.tex
-badd +0 ~/Dokumente/Disstex/theory/basicQM.tex
+badd +1 MayResults.tex
+badd +374 ~/Dokumente/Disstex/backmatter/AnAppendix.tex
+badd +1 ~/Dokumente/Disstex/theory/basicQM.tex
+badd +0 CEPdoublewell.tex
+badd +0 ~/.vimrc.local
+badd +0 CEPH2plus.tex
 argglobal
 silent! argdel *
 set stal=2
@@ -50,12 +53,104 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 588 - ((14 * winheight(0) + 19) / 38)
+let s:l = 588 - ((18 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 588
-normal! 074|
+normal! 079|
+lcd ~/Dokumente/Disstex/chapters
+tabedit ~/Dokumente/Disstex/chapters/CEPdoublewell.tex
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=vimtex#fold#level(v:lnum)
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+2,82fold
+85,138fold
+153,160fold
+161,168fold
+169,176fold
+177,389fold
+139,389fold
+83,389fold
+390,546fold
+547,577fold
+578,584fold
+1,584fold
+585,1210fold
+1222,1233fold
+1234,1241fold
+1242,1246fold
+1247,1255fold
+1266,1282fold
+1285,1295fold
+1298,1306fold
+1309,1321fold
+1325,1337fold
+1256,1340fold
+1220,1340fold
+1
+normal! zo
+2
+normal! zo
+83
+normal! zo
+85
+normal! zo
+139
+normal! zo
+153
+normal! zo
+161
+normal! zo
+169
+normal! zo
+177
+normal! zo
+1220
+normal! zo
+1256
+normal! zo
+1256
+normal! zc
+1220
+normal! zc
+let s:l = 1 - ((0 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 038|
+lcd ~/Dokumente/Disstex/chapters
+tabedit ~/Dokumente/Disstex/chapters/CEPH2plus.tex
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
 lcd ~/Dokumente/Disstex/chapters
 tabedit ~/Dokumente/Disstex/backmatter/AnAppendix.tex
 set splitbelow splitright
@@ -109,9 +204,25 @@ silent! normal! zE
 3,495fold
 3
 normal! zo
+4
+normal! zo
+12
+normal! zo
+12
+normal! zc
+4
+normal! zc
+240
+normal! zo
+251
+normal! zo
+251
+normal! zc
+240
+normal! zc
 344
 normal! zo
-let s:l = 374 - ((373 * winheight(0) + 19) / 38)
+let s:l = 374 - ((373 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -248,11 +359,59 @@ silent! normal! zE
 1,610fold
 1
 normal! zo
+2
+normal! zo
+2
+normal! zc
+143
+normal! zo
+168
+normal! zo
+217
+normal! zo
+217
+normal! zc
+168
+normal! zc
+241
+normal! zo
+252
+normal! zo
+252
+normal! zc
+267
+normal! zo
+275
+normal! zo
+275
+normal! zc
+267
+normal! zc
+241
+normal! zc
+295
+normal! zo
+328
+normal! zo
+328
+normal! zc
+295
+normal! zc
+384
+normal! zo
+384
+normal! zc
+143
+normal! zc
 449
 normal! zo
 450
 normal! zo
 450
+normal! zc
+498
+normal! zo
+498
 normal! zc
 589
 normal! zo
@@ -264,14 +423,14 @@ normal! zo
 normal! zo
 589
 normal! zc
-let s:l = 645 - ((23 * winheight(0) + 19) / 38)
+let s:l = 645 - ((29 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 645
-normal! 047|
+normal! 048|
 lcd ~/Dokumente/Disstex/theory
-tabnext 2
+tabnext 4
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
