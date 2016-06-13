@@ -132,6 +132,7 @@ au VimEnter * call IMAP('DW', "<++>_{<++>}<++>", 'tex')
 "au VimEnter * call IMAP('`s', "\\sum_{<++>}<++>", 'tex') "already used = sigma
 "au VimEnter * call IMAP('`P', "^{\prime}<++>", 'tex')
 au VimEnter * call IMAP("`#", "^{\\star}<++>", 'tex')
+au VimEnter * call IMAP("`v", "\varphi", 'tex')
 au VimEnter * call IMAP("`'", "^{\\prime}<++>", 'tex')
 au VimEnter * call IMAP("`P", "\\Pi", 'tex')
 au VimEnter * call IMAP('EA*',"\\begin{align*}\<CR><++>\<CR>\\label{eq:<++>}\<CR>\\end{align*}",'tex')
