@@ -186,6 +186,13 @@ endfunction
 function! CopyRxend(end)
 :norm:let @0=a:end:b2:g/Time :\_s*0.000VG"py:b1nOset multiplot layout 1,2 scale 1.4,1.4G"pp`]ounset multiplot
 endfunction
+function! CopyRtofile(start)
+:norm:let @0=a:start:g/Time:\_s*0.0003jV10300j"py:tabe RhoRt0fs.dat"pP:wq!
+endfun
+function! CopyXtofile(start)
+:norm:let @0=a:start:g/Time:\_s*0.0003jV6640j"py:tabe RhoXt0fs.dat"pP:wq!
+endfunction
+
 "nmap <silent><Plug>CopyPastaRx :call CopyRx()<CR>
             "\:call repeat#set("\<Plug>CopyPastaRx")<CR>
 "nmap <Leader>cf <Plug>CopyPastaRx

@@ -3,24 +3,24 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Dokumente/Disstex
+cd ~/Dokumente/Disstex/chapters
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 Thesis.tex
-badd +1 chapters/MayResults.tex
-badd +374 backmatter/AnAppendix.tex
-badd +1 theory/basicQM.tex
-badd +1 chapters/CEPdoublewell.tex
+badd +1 ~/Dokumente/Disstex/Thesis.tex
+badd +1 MayResults.tex
+badd +374 ~/Dokumente/Disstex/backmatter/AnAppendix.tex
+badd +1 ~/Dokumente/Disstex/theory/basicQM.tex
+badd +1 CEPdoublewell.tex
 badd +1 ~/.vimrc.local
-badd +1 chapters/CEPH2plus.tex
-badd +0 chapters/CEPD2plus.tex
-badd +0 preamble/etc.tex
+badd +1 CEPH2plus.tex
+badd +1 CEPD2plus.tex
+badd +1 ~/Dokumente/Disstex/preamble/etc.tex
 argglobal
 silent! argdel *
 set stal=2
-edit Thesis.tex
+edit ~/Dokumente/Disstex/Thesis.tex
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
@@ -34,7 +34,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 22 - ((21 * winheight(0) + 25) / 51)
+let s:l = 22 - ((16 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -55,7 +55,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 94 - ((47 * winheight(0) + 25) / 51)
+let s:l = 94 - ((35 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -76,7 +76,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 588 - ((19 * winheight(0) + 25) / 51)
+let s:l = 588 - ((14 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -109,18 +109,6 @@ silent! normal! zE
 544,574fold
 575,581fold
 1,581fold
-582,1207fold
-1219,1230fold
-1231,1238fold
-1239,1243fold
-1244,1252fold
-1263,1279fold
-1282,1292fold
-1295,1303fold
-1306,1318fold
-1322,1334fold
-1253,1337fold
-1217,1337fold
 1
 normal! zo
 1
@@ -139,15 +127,7 @@ normal! zo
 normal! zo
 174
 normal! zo
-1217
-normal! zo
-1253
-normal! zo
-1253
-normal! zc
-1217
-normal! zc
-let s:l = 1 - ((0 * winheight(0) + 25) / 51)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -172,26 +152,16 @@ silent! normal! zE
 59,68fold
 87,93fold
 21,125fold
-126,620fold
-621,649fold
-650,652fold
-19,652fold
-19
-normal! zo
 21
 normal! zo
-21
-normal! zc
-126
+38
 normal! zo
-621
-normal! zo
-let s:l = 146 - ((130 * winheight(0) + 25) / 51)
+let s:l = 39 - ((13 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-146
-normal! 05|
+39
+normal! 0
 lcd ~/Dokumente/Disstex/chapters
 tabedit ~/Dokumente/Disstex/theory/basicQM.tex
 set splitbelow splitright
@@ -387,7 +357,7 @@ normal! zo
 normal! zo
 589
 normal! zc
-let s:l = 645 - ((31 * winheight(0) + 25) / 51)
+let s:l = 645 - ((23 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
