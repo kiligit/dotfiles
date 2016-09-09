@@ -109,7 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-	if [[ -d ~/gnuplot/ ]]; then source ~/gnuplot/; fi
+#if [[ -d ~/Downloads/gnuplot-5.0.4/ ]]; then source ~/Downloads/gnuplot-5.0.4/; fi
 	if [[ -d ~/qtplot/ ]]; then source ~/gtplot/ ]]; fi
     if [[ -d ~/Downloads/jpgfdraw-0.5.6b/bin/ ]]; then source ~/Downloads/jpgfdraw-0.5.6b/bin/; fi
 	if [[ -d ~/Apps/ ]] ; then source ~/Apps/; fi

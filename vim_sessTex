@@ -17,6 +17,7 @@ badd +1 ~/.vimrc.local
 badd +1 CEPH2plus.tex
 badd +1 CEPD2plus.tex
 badd +1 ~/Dokumente/Disstex/preamble/etc.tex
+badd +0 4dCI.tex
 argglobal
 silent! argdel *
 set stal=2
@@ -55,7 +56,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 94 - ((35 * winheight(0) + 19) / 38)
+let s:l = 94 - ((30 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -156,11 +157,56 @@ silent! normal! zE
 normal! zo
 38
 normal! zo
-let s:l = 39 - ((13 * winheight(0) + 19) / 38)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-39
+1
+normal! 0
+lcd ~/Dokumente/Disstex/chapters
+tabedit ~/Dokumente/Disstex/chapters/4dCI.tex
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+3,25fold
+30,36fold
+45,49fold
+51,57fold
+68,76fold
+78,84fold
+26,92fold
+1,92fold
+1
+normal! zo
+3
+normal! zo
+26
+normal! zo
+30
+normal! zo
+45
+normal! zo
+51
+normal! zo
+68
+normal! zo
+78
+normal! zo
+let s:l = 12 - ((11 * winheight(0) + 19) / 38)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+12
 normal! 0
 lcd ~/Dokumente/Disstex/chapters
 tabedit ~/Dokumente/Disstex/theory/basicQM.tex
@@ -364,7 +410,7 @@ normal! zt
 645
 normal! 048|
 lcd ~/Dokumente/Disstex/theory
-tabnext 5
+tabnext 6
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
