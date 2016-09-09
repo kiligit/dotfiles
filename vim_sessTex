@@ -17,6 +17,7 @@ badd +1 ~/.vimrc.local
 badd +1 CEPH2plus.tex
 badd +1 CEPD2plus.tex
 badd +1 ~/Dokumente/Disstex/preamble/etc.tex
+badd +1 4dCI.tex
 argglobal
 silent! argdel *
 set stal=2
@@ -161,7 +162,28 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 39
-normal! 0
+normal! 06|
+lcd ~/Dokumente/Disstex/chapters
+tabedit ~/Dokumente/Disstex/chapters/4dCI.tex
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 93 - ((9 * winheight(0) + 19) / 38)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+93
+normal! 046|
 lcd ~/Dokumente/Disstex/chapters
 tabedit ~/Dokumente/Disstex/theory/basicQM.tex
 set splitbelow splitright
@@ -364,7 +386,7 @@ normal! zt
 645
 normal! 048|
 lcd ~/Dokumente/Disstex/theory
-tabnext 5
+tabnext 6
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
