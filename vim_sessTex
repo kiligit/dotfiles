@@ -17,11 +17,7 @@ badd +1 ~/.vimrc.local
 badd +1 CEPH2plus.tex
 badd +1 CEPD2plus.tex
 badd +1 ~/Dokumente/Disstex/preamble/etc.tex
-<<<<<<< HEAD
-badd +0 4dCI.tex
-=======
 badd +1 4dCI.tex
->>>>>>> 32259414f4c6fd46d88ac8e51e7a1b71debe3f19
 argglobal
 silent! argdel *
 set stal=2
@@ -206,14 +202,10 @@ normal! zo
 normal! zo
 78
 normal! zo
-let s:l = 12 - ((11 * winheight(0) + 19) / 38)
+let s:l = 39 - ((33 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-<<<<<<< HEAD
-12
-normal! 0
-=======
 39
 normal! 06|
 lcd ~/Dokumente/Disstex/chapters
@@ -236,8 +228,7 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 93
-normal! 046|
->>>>>>> 32259414f4c6fd46d88ac8e51e7a1b71debe3f19
+normal! 019|
 lcd ~/Dokumente/Disstex/chapters
 tabedit ~/Dokumente/Disstex/theory/basicQM.tex
 set splitbelow splitright
@@ -438,7 +429,7 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 645
-normal! 048|
+normal! 047|
 lcd ~/Dokumente/Disstex/theory
 tabnext 6
 set stal=1
