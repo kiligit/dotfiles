@@ -17,7 +17,11 @@ badd +1 ~/.vimrc.local
 badd +1 CEPH2plus.tex
 badd +1 CEPD2plus.tex
 badd +1 ~/Dokumente/Disstex/preamble/etc.tex
+<<<<<<< HEAD
 badd +0 4dCI.tex
+=======
+badd +1 4dCI.tex
+>>>>>>> 32259414f4c6fd46d88ac8e51e7a1b71debe3f19
 argglobal
 silent! argdel *
 set stal=2
@@ -206,8 +210,34 @@ let s:l = 12 - ((11 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
+<<<<<<< HEAD
 12
 normal! 0
+=======
+39
+normal! 06|
+lcd ~/Dokumente/Disstex/chapters
+tabedit ~/Dokumente/Disstex/chapters/4dCI.tex
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 93 - ((9 * winheight(0) + 19) / 38)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+93
+normal! 046|
+>>>>>>> 32259414f4c6fd46d88ac8e51e7a1b71debe3f19
 lcd ~/Dokumente/Disstex/chapters
 tabedit ~/Dokumente/Disstex/theory/basicQM.tex
 set splitbelow splitright
