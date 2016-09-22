@@ -3,21 +3,22 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Dokumente/Disstex/chapters
+cd ~/Dokumente/Disstex/preamble
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 badd +1 ~/Dokumente/Disstex/Thesis.tex
-badd +1 MayResults.tex
+badd +1 ~/Dokumente/Disstex/chapters/MayResults.tex
 badd +374 ~/Dokumente/Disstex/backmatter/AnAppendix.tex
 badd +1 ~/Dokumente/Disstex/theory/basicQM.tex
-badd +1 CEPdoublewell.tex
+badd +1 ~/Dokumente/Disstex/chapters/CEPdoublewell.tex
 badd +1 ~/.vimrc.local
-badd +1 CEPH2plus.tex
-badd +1 CEPD2plus.tex
-badd +1 ~/Dokumente/Disstex/preamble/etc.tex
-badd +1 4dCI.tex
+badd +1 ~/Dokumente/Disstex/chapters/CEPH2plus.tex
+badd +1 ~/Dokumente/Disstex/chapters/CEPD2plus.tex
+badd +1 etc.tex
+badd +1 ~/Dokumente/Disstex/chapters/4dCI.tex
+badd +0 general.tex
 argglobal
 silent! argdel *
 set stal=2
@@ -35,12 +36,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 22 - ((16 * winheight(0) + 19) / 38)
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-22
-normal! 018|
+1
+normal! 0
 lcd ~/Dokumente/Disstex
 tabedit ~/Dokumente/Disstex/preamble/etc.tex
 set splitbelow splitright
@@ -56,12 +57,33 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 94 - ((30 * winheight(0) + 19) / 38)
+let s:l = 81 - ((25 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-94
-normal! 015|
+81
+normal! 045|
+lcd ~/Dokumente/Disstex/preamble
+tabedit ~/Dokumente/Disstex/preamble/general.tex
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 69 - ((25 * winheight(0) + 19) / 38)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+69
+normal! 051|
 lcd ~/Dokumente/Disstex/preamble
 tabedit ~/Dokumente/Disstex/chapters/MayResults.tex
 set splitbelow splitright
@@ -178,57 +200,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-3,25fold
-30,36fold
-45,49fold
-51,57fold
-68,76fold
-78,84fold
-26,92fold
-1,92fold
-1
-normal! zo
-3
-normal! zo
-26
-normal! zo
-30
-normal! zo
-45
-normal! zo
-51
-normal! zo
-68
-normal! zo
-78
-normal! zo
-let s:l = 39 - ((33 * winheight(0) + 19) / 38)
+let s:l = 395 - ((15 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-39
-normal! 06|
-lcd ~/Dokumente/Disstex/chapters
-tabedit ~/Dokumente/Disstex/chapters/4dCI.tex
-set splitbelow splitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 93 - ((9 * winheight(0) + 19) / 38)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-93
-normal! 019|
+395
+normal! 0
 lcd ~/Dokumente/Disstex/chapters
 tabedit ~/Dokumente/Disstex/theory/basicQM.tex
 set splitbelow splitright
@@ -431,7 +408,7 @@ normal! zt
 645
 normal! 047|
 lcd ~/Dokumente/Disstex/theory
-tabnext 6
+tabnext 7
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
