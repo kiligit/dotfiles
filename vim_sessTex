@@ -3,7 +3,7 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Dokumente/Disstex/preamble
+cd ~/Dokumente/Disstex/theory
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -11,14 +11,15 @@ set shortmess=aoO
 badd +1 ~/Dokumente/Disstex/Thesis.tex
 badd +1 ~/Dokumente/Disstex/chapters/MayResults.tex
 badd +374 ~/Dokumente/Disstex/backmatter/AnAppendix.tex
-badd +1 ~/Dokumente/Disstex/theory/basicQM.tex
+badd +1 basicQM.tex
 badd +1 ~/Dokumente/Disstex/chapters/CEPdoublewell.tex
 badd +1 ~/.vimrc.local
 badd +1 ~/Dokumente/Disstex/chapters/CEPH2plus.tex
 badd +1 ~/Dokumente/Disstex/chapters/CEPD2plus.tex
-badd +1 etc.tex
+badd +1 ~/Dokumente/Disstex/preamble/etc.tex
 badd +1 ~/Dokumente/Disstex/chapters/4dCI.tex
-badd +0 general.tex
+badd +1 ~/Dokumente/Disstex/preamble/general.tex
+badd +0 ~/Dokumente/Disstex/backmatter/Summary.tex
 argglobal
 silent! argdel *
 set stal=2
@@ -36,7 +37,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 25) / 51)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -57,7 +58,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 81 - ((25 * winheight(0) + 25) / 51)
+let s:l = 81 - ((19 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -104,7 +105,7 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 588
-normal! 079|
+normal! 0
 lcd ~/Dokumente/Disstex/chapters
 tabedit ~/Dokumente/Disstex/chapters/CEPdoublewell.tex
 set splitbelow splitright
@@ -205,7 +206,7 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 395
-normal! 0
+normal! 06|
 lcd ~/Dokumente/Disstex/chapters
 tabedit ~/Dokumente/Disstex/theory/basicQM.tex
 set splitbelow splitright
@@ -408,7 +409,28 @@ normal! zt
 645
 normal! 047|
 lcd ~/Dokumente/Disstex/theory
-tabnext 7
+tabedit ~/Dokumente/Disstex/backmatter/Summary.tex
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 12 - ((11 * winheight(0) + 19) / 38)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+12
+normal! 03|
+lcd ~/Dokumente/Disstex/backmatter
+tabnext 9
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
