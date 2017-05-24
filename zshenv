@@ -56,7 +56,7 @@ function gitbunduni() {git bundle create ~/Dokumente/unihome.bundle ^daheim/mast
 #rsync aliases
 alias syncSea='rsync -az ~/ /media/kilian/Seagate\ Backup\ Plus\ Drive/myunihome/'
 alias syncFree='rsync -avz ~/Dokumente/ /media/kilian/FreeAgent\ Drive/Dokumente/'
-alias unissh='ssh -Y kilian@132.187.199.58 -t zsh '
+alias unissh='ssh -Y kilian@132.187.199.56 -t zsh '
 alias showM='showsys84'
 alias cdM='cd ~/MCTDH/'
 #extract any archive. FROM zshwiki
