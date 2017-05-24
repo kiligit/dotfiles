@@ -1,6 +1,21 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+#always switch to ZSH!!!!
+
+if [[ "$(whoami)" = kilian ]] && [[ $UID -ne 0 ]]; then
+echo "user = kilian + Not root -> go zsh"
+export SHELL=/bin/zsh
+exec zsh
+fi
+
+if [ "$uid" = "0" ]
+then
+    echo "Root user"
+
+else
+    echo "Not a root user"
+fi
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
