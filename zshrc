@@ -85,6 +85,10 @@ fi
 if [ -d "/usr/local/texlive/2015/texmf-dist/doc/man" ] ; then
     export MANPATH="/usr/local/texlive/2015/texmf-dist/doc/man:$MANPATH"
 fi
+#if [ -d "~/Downloads/node-v6.9.5-linux-x64/bin/" ] ; then
+    #export PATH="~/Downloads/node-v6.9.5-linux-x64/bin/:$PATH"
+#fi
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,7 +125,7 @@ if [[ -d ~/Downloads/Atraci-Angular/build/Atraci/linux64/ ]]; then source ~/Down
 #if [[ "$HOST" = wtch058]] then
 #fi
 case $HOST in
-(wtch058)
+(wtch056)
 xset b off
 xset r rate 200 40;;
 (*)   echo "I am on $HOST";;
