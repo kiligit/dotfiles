@@ -12,6 +12,22 @@ fi
 cd $latest_directory
 }
 
+function cdLL() {
+latest_directory=(./*(/om[1])); latest_directory=$~latest_directory
+cd $latest_directory
+latest_directory=(./*(/om[1])); latest_directory=$~latest_directory
+cd $latest_directory
+}
+
+function cdLLL() {
+latest_directory=(./*(/om[1])); latest_directory=$~latest_directory
+cd $latest_directory
+latest_directory=(./*(/om[1])); latest_directory=$~latest_directory
+cd $latest_directory
+latest_directory=(./*(/om[1])); latest_directory=$~latest_directory
+cd $latest_directory
+}
+
 function vod2vid(){
 ffmpeg -y -ss $1 -i $(livestreamer --stream-url $2 best) -bsf:a aac_adtstoasc -c:a libmp3lame -c:v copy -c:a copy -avoid_negative_ts 1 video.mp4
 ;}
