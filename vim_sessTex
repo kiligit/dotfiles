@@ -3,23 +3,27 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Dokumente/Disstex/theory
+cd ~/Dokumente/Disstex/chapters
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 ~/Dokumente/Disstex/Thesis.tex
-badd +1 ~/Dokumente/Disstex/chapters/MayResults.tex
-badd +374 ~/Dokumente/Disstex/backmatter/AnAppendix.tex
-badd +1 basicQM.tex
-badd +1 ~/Dokumente/Disstex/chapters/CEPdoublewell.tex
-badd +1 ~/.vimrc.local
-badd +1 ~/Dokumente/Disstex/chapters/CEPH2plus.tex
-badd +1 ~/Dokumente/Disstex/chapters/CEPD2plus.tex
-badd +1 ~/Dokumente/Disstex/preamble/etc.tex
-badd +1 ~/Dokumente/Disstex/chapters/4dCI.tex
-badd +1 ~/Dokumente/Disstex/preamble/general.tex
-badd +0 ~/Dokumente/Disstex/backmatter/Summary.tex
+badd +34 ~/Dokumente/Disstex/Thesis.tex
+badd +1846 MayResults.tex
+badd +444 ~/Dokumente/Disstex/backmatter/AnAppendix.tex
+badd +2 ~/Dokumente/Disstex/theory/basicQM.tex
+badd +1 CEPdoublewell.tex
+badd +202 ~/.vimrc.local
+badd +1 CEPH2plus.tex
+badd +1 CEPD2plus.tex
+badd +81 ~/Dokumente/Disstex/preamble/etc.tex
+badd +1 4dCI.tex
+badd +90 ~/Dokumente/Disstex/preamble/general.tex
+badd +141 ~/Dokumente/Disstex/backmatter/Summary.tex
+badd +85 ~/Dokumente/Disstex/frontmatter/Introduction.tex
+badd +603 ~/Dokumente/Disstex/theory/MayRatenGleichung.tex
+badd +19 ~/Dokumente/Disstex/preamble/static.tex
+badd +0 ~/Dokumente/Disstex/preamble/fonts.tex
 argglobal
 silent! argdel *
 set stal=2
@@ -37,11 +41,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 19) / 38)
+let s:l = 28 - ((23 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+28
 normal! 0
 lcd ~/Dokumente/Disstex
 tabedit ~/Dokumente/Disstex/preamble/etc.tex
@@ -58,12 +62,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 81 - ((19 * winheight(0) + 19) / 38)
+let s:l = 42 - ((40 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-81
-normal! 045|
+42
+normal! 0109|
 lcd ~/Dokumente/Disstex/preamble
 tabedit ~/Dokumente/Disstex/preamble/general.tex
 set splitbelow splitright
@@ -79,13 +83,55 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 69 - ((25 * winheight(0) + 19) / 38)
+let s:l = 108 - ((43 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-69
-normal! 051|
+108
+normal! 027|
 lcd ~/Dokumente/Disstex/preamble
+tabedit ~/Dokumente/Disstex/preamble/fonts.tex
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 23 - ((22 * winheight(0) + 24) / 49)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+23
+normal! 043|
+lcd ~/Dokumente/Disstex/preamble
+tabedit ~/Dokumente/Disstex/theory/MayRatenGleichung.tex
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 336 - ((27 * winheight(0) + 24) / 49)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+336
+normal! 014|
+lcd ~/Dokumente/Disstex/theory
 tabedit ~/Dokumente/Disstex/chapters/MayResults.tex
 set splitbelow splitright
 wincmd t
@@ -100,12 +146,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 588 - ((14 * winheight(0) + 19) / 38)
+let s:l = 73 - ((24 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-588
-normal! 0
+73
+normal! 039|
 lcd ~/Dokumente/Disstex/chapters
 tabedit ~/Dokumente/Disstex/chapters/CEPdoublewell.tex
 set splitbelow splitright
@@ -130,9 +176,9 @@ silent! normal! zE
 136,386fold
 80,386fold
 387,543fold
-544,574fold
-575,581fold
-1,581fold
+544,573fold
+574,580fold
+1,580fold
 1
 normal! zo
 1
@@ -151,12 +197,18 @@ normal! zo
 normal! zo
 174
 normal! zo
-let s:l = 1 - ((0 * winheight(0) + 19) / 38)
+387
+normal! zo
+544
+normal! zo
+574
+normal! zo
+let s:l = 511 - ((24 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+511
+normal! 060|
 lcd ~/Dokumente/Disstex/chapters
 tabedit ~/Dokumente/Disstex/chapters/CEPD2plus.tex
 set splitbelow splitright
@@ -174,17 +226,19 @@ setlocal fen
 silent! normal! zE
 38,41fold
 59,68fold
-87,93fold
-21,125fold
+88,94fold
+21,126fold
 21
 normal! zo
 38
 normal! zo
-let s:l = 1 - ((0 * winheight(0) + 19) / 38)
+88
+normal! zo
+let s:l = 2 - ((1 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+2
 normal! 0
 lcd ~/Dokumente/Disstex/chapters
 tabedit ~/Dokumente/Disstex/chapters/4dCI.tex
@@ -201,12 +255,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 395 - ((15 * winheight(0) + 19) / 38)
+let s:l = 334 - ((32 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-395
-normal! 06|
+334
+normal! 066|
 lcd ~/Dokumente/Disstex/chapters
 tabedit ~/Dokumente/Disstex/theory/basicQM.tex
 set splitbelow splitright
@@ -242,173 +296,250 @@ silent! normal! zE
 103,105fold
 107,111fold
 114,117fold
-119,125fold
-127,130fold
-132,134fold
-137,139fold
-2,142fold
-146,149fold
-154,157fold
-162,165fold
-171,174fold
-176,179fold
-185,190fold
-194,196fold
-198,200fold
-202,204fold
-205,209fold
-211,214fold
-218,221fold
-222,225fold
-226,229fold
-230,233fold
-217,234fold
-168,240fold
-249,251fold
-253,256fold
-257,260fold
-252,261fold
-268,273fold
-280,283fold
-275,284fold
-267,285fold
-288,290fold
-241,294fold
-298,301fold
-303,305fold
-309,311fold
-312,314fold
-316,318fold
-320,322fold
-324,326fold
-329,331fold
-328,332fold
-334,336fold
-340,342fold
-345,348fold
-352,355fold
-359,362fold
-363,366fold
-369,371fold
-374,376fold
-295,383fold
-391,393fold
-395,397fold
-399,401fold
-403,405fold
-407,412fold
-414,416fold
-418,421fold
-422,425fold
-427,430fold
-384,448fold
-143,448fold
-453,456fold
-458,460fold
-462,464fold
-466,468fold
-472,474fold
-476,480fold
-483,486fold
-489,491fold
-493,496fold
-450,497fold
-503,505fold
-507,509fold
-511,514fold
-516,523fold
-526,528fold
-530,532fold
-534,537fold
-540,542fold
-543,545fold
-550,554fold
-556,558fold
-560,562fold
-564,566fold
-569,571fold
-573,579fold
-582,585fold
-498,588fold
-593,595fold
-596,598fold
-600,602fold
-589,610fold
-449,610fold
-1,610fold
+120,124fold
+126,129fold
+131,133fold
+136,138fold
+2,141fold
+145,148fold
+153,156fold
+161,164fold
+170,173fold
+175,178fold
+184,189fold
+193,195fold
+197,199fold
+201,203fold
+204,208fold
+210,213fold
+217,220fold
+221,224fold
+225,228fold
+229,232fold
+216,233fold
+167,239fold
+248,250fold
+252,255fold
+256,259fold
+251,260fold
+267,272fold
+279,282fold
+274,283fold
+266,284fold
+287,289fold
+240,293fold
+297,300fold
+302,304fold
+308,310fold
+311,313fold
+315,317fold
+319,321fold
+323,325fold
+328,330fold
+327,331fold
+333,335fold
+339,341fold
+344,347fold
+351,354fold
+358,361fold
+362,365fold
+368,370fold
+373,375fold
+294,382fold
+390,392fold
+394,396fold
+398,400fold
+402,404fold
+406,411fold
+413,415fold
+417,420fold
+421,424fold
+426,429fold
+383,447fold
+142,447fold
+452,455fold
+457,459fold
+461,463fold
+465,467fold
+471,473fold
+475,479fold
+482,486fold
+488,490fold
+492,495fold
+449,496fold
+502,504fold
+506,508fold
+510,513fold
+515,522fold
+525,527fold
+529,531fold
+533,536fold
+539,541fold
+542,544fold
+549,553fold
+555,557fold
+559,561fold
+563,565fold
+568,570fold
+572,578fold
+581,584fold
+497,587fold
+592,594fold
+595,597fold
+599,601fold
+588,609fold
+448,609fold
+1,609fold
 1
 normal! zo
 2
 normal! zo
-2
-normal! zc
-143
+7
 normal! zo
-168
+11
 normal! zo
-217
+19
 normal! zo
-217
-normal! zc
-168
-normal! zc
-241
+23
 normal! zo
-252
+30
 normal! zo
-252
-normal! zc
-267
+41
 normal! zo
-275
+46
 normal! zo
-275
-normal! zc
-267
-normal! zc
-241
-normal! zc
-295
+51
 normal! zo
-328
+58
 normal! zo
-328
-normal! zc
-295
-normal! zc
-384
+63
 normal! zo
-384
+68
+normal! zo
+72
+normal! zo
+76
+normal! zo
+80
+normal! zo
+85
+normal! zo
+91
+normal! zo
+98
+normal! zo
+103
+normal! zo
+107
+normal! zo
+114
+normal! zo
+120
+normal! zo
+126
+normal! zo
+131
+normal! zo
+136
+normal! zo
+142
+normal! zo
+167
+normal! zo
+216
+normal! zo
+221
+normal! zo
+240
+normal! zo
+251
+normal! zo
+251
 normal! zc
-143
+266
+normal! zo
+274
+normal! zo
+274
 normal! zc
+266
+normal! zc
+240
+normal! zc
+294
+normal! zo
+327
+normal! zo
+327
+normal! zc
+383
+normal! zo
+406
+normal! zo
+448
+normal! zo
 449
 normal! zo
-450
+452
 normal! zo
-450
-normal! zc
-498
+457
 normal! zo
-498
-normal! zc
-589
+461
 normal! zo
-593
+465
 normal! zo
-596
+471
 normal! zo
-600
+475
 normal! zo
-589
-normal! zc
-let s:l = 645 - ((23 * winheight(0) + 19) / 38)
+482
+normal! zo
+488
+normal! zo
+492
+normal! zo
+497
+normal! zo
+549
+normal! zo
+581
+normal! zo
+588
+normal! zo
+592
+normal! zo
+595
+normal! zo
+599
+normal! zo
+let s:l = 13 - ((12 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-645
-normal! 047|
+13
+normal! 0
 lcd ~/Dokumente/Disstex/theory
+tabedit ~/Dokumente/Disstex/backmatter/AnAppendix.tex
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 24) / 49)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/Dokumente/Disstex/backmatter
 tabedit ~/Dokumente/Disstex/backmatter/Summary.tex
 set splitbelow splitright
 wincmd t
@@ -423,14 +554,67 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 12 - ((11 * winheight(0) + 19) / 38)
+let s:l = 238 - ((29 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-12
-normal! 03|
+238
+normal! 026|
 lcd ~/Dokumente/Disstex/backmatter
-tabnext 9
+tabedit ~/Dokumente/Disstex/frontmatter/Introduction.tex
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+2,4fold
+2
+normal! zo
+let s:l = 111 - ((39 * winheight(0) + 24) / 49)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+111
+let s:c = 119 - ((58 * winwidth(0) + 63) / 126)
+if s:c > 0
+  exe 'normal! ' . s:c . '|zs' . 119 . '|'
+else
+  normal! 0119|
+endif
+lcd ~/Dokumente/Disstex/frontmatter
+tabedit ~/Dokumente/Disstex/frontmatter/Introduction.tex
+set splitbelow splitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+2,4fold
+2
+normal! zo
+let s:l = 111 - ((39 * winheight(0) + 24) / 49)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+111
+normal! 018|
+lcd ~/Dokumente/Disstex/frontmatter
+tabnext 11
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
