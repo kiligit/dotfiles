@@ -28,9 +28,9 @@ latest_directory=(./*(/om[1])); latest_directory=$~latest_directory
 cd $latest_directory
 }
 
-function vod2vid(){
-ffmpeg -y -ss $1 -i $(livestreamer --stream-url $2 best) -bsf:a aac_adtstoasc -c:a libmp3lame -c:v copy -c:a copy -avoid_negative_ts 1 video.mp4
-;}
+#function vod2vid(){
+#ffmpeg -y -ss $1 -i $(livestreamer --stream-url $2 best) -bsf:a aac_adtstoasc -c:a libmp3lame -c:v copy -c:a copy -avoid_negative_ts 1 video.mp4
+#;}
 function calc(){ awk "BEGIN{ print $* }" ;}
 function x() {xmgrace $* -free &}
 function xb() {xmgrace -batch $* -free &}
@@ -45,7 +45,10 @@ function zrose() {
 ssh -Y kilian@rosemarie -t zsh 
 #ssh -Y kilian@rosemarie
 }
-alias AtrA='~/Downloads/Atraci-Angular/build/Atraci/linux64/Atraci &'
+alias ytdl='~/.linuxbrew/Cellar/youtube-dl/2017.06.18/bin/youtube-dl'
+function voddl(){
+ytdl $1  -o $2 -f '720p30' --external-downloader aria2c --external-downloader-args "-x 16"
+;}
 alias sapt='sudo apt-get $*'
 alias ff='find . -name \*\!:1\* -print'
 alias mine='ps aux | grep USER | grep -v grep; ps aux|grep -i kilian |grep -v grep' 
