@@ -9,7 +9,7 @@
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bashrc bash_aliases vimrc vimrc.local vimrc.bundles.local
-tcshrc tcsh_aliases Xmodmap gitconfig zshrc latexmkrc"    # list of files/folders to symlink in homedir
+tcshrc tcsh_aliases Xmodmap gitconfig zshrc latexmkrc xinitrc"    # list of files/folders to symlink in homedir
 
 ##########
 
