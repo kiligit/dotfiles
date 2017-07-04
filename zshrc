@@ -124,11 +124,16 @@ if [[ -d ~/Downloads/Atraci-Angular/build/Atraci/linux64/ ]]; then source ~/Down
 #if [ $HOST == "wtch028" ]; then
 #if [[ "$HOST" = wtch058]] then
 #fi
+#dont got below delay of 200 ! Rate 40 to 100 is np. Just try
 case $HOST in
 (wtch056)
+echo "I am on $HOST"
 xset b off
-xset r rate 200 40;;
-(*)   echo "I am on $HOST";;
+xset r rate 200 80;;
+(*)
+echo "I am on $HOST"
+xset b off
+xset r rate 200 80;;
 esac
 #disable beep sound
 # Example aliases
