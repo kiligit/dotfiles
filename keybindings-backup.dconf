@@ -1,0 +1,36 @@
+[custom-keybindings/custom2]
+binding=['<Primary><Alt>m', '<Super>m']
+command='jumpapp thunderbird'
+name='Mail'
+
+[custom-keybindings/custom1]
+binding=['<Primary><Alt>t', '<Super>t']
+command='jumpapp gnome-terminal'
+name='Terminal'
+
+[custom-keybindings/custom4]
+binding=['<Primary><Alt>z', '<Super>z']
+command='jumpapp zathura'
+name='zathura'
+
+[custom-keybindings/custom0]
+binding=['<Primary><Alt>v', '<Super>v']
+command='jumpapp gvim -p $* &'
+name='Vim'
+
+[custom-keybindings/custom3]
+binding=['<Primary><Alt>f', '<Super>f']
+command='jumpapp firefox'
+name='Firefox'
+
+[/]
+custom-list=['custom0', 'custom1', 'custom2', 'custom3', 'custom4']
+
+[media-keys]
+terminal=@as []
+
+[wm]
+switch-group=['<Alt>1']
+raise=@as []
+switch-group-backward=['<Alt>2']
+toggle-fullscreen=['F11']
