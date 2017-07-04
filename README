@@ -35,3 +35,7 @@ To export your keyboard shortcut keys, you should do:
 dconf dump /org/cinnamon/desktop/keybindings/ >~/dotfiles/keybindings-backup.dconf
 To later import it (for example) on another computer, do:
 dconf load /org/cinnamon/desktop/keybindings/ <~/dotfiles/keybindings-backup.dconf
+---------------------
+krusader anstelle von Dolphin etc
+sudo apt-get install krusader
+---------------------
