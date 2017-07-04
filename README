@@ -20,3 +20,18 @@ tlmgr is used for tex-live font management
 "###
 "unter settings->system->shortcuts-> global keyboard shortcuts ->kwin
 Switch to Window to Left Alt+1, Switch to Window to Right Alt+2
+##################
+VIEL BESSER run-or-raise
+https://github.com/mkropat/jumpapp
+sudo add-apt-repository ppa:mkropat/ppa
+sudo apt-get update
+sudo apt-get install jumpapp
+####################
+Portable keybindings
+export cinnamon settings with dconf-tools
+sudo apt-get install dconf-tools
+----------------
+To export your keyboard shortcut keys, you should do:
+dconf dump /org/cinnamon/desktop/keybindings/ >~/dotfiles/keybindings-backup.dconf
+To later import it (for example) on another computer, do:
+dconf load /org/cinnamon/desktop/keybindings/ <~/dotfiles/keybindings-backup.dconf
