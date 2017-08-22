@@ -39,3 +39,4 @@ dconf load /org/cinnamon/desktop/keybindings/ <~/dotfiles/keybindings-backup.dco
 krusader anstelle von Dolphin etc
 sudo apt-get install krusader
 ---------------------
+KDE keys are in keybindings.kde -> import with gui (systemsettings - workspace -shortcuts)
