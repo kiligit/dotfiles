@@ -119,7 +119,8 @@ source $ZSH/oh-my-zsh.sh
 	if [[ -d ~/Apps/ ]] ; then source ~/Apps/; fi
 	if [[ -d ~/Dokumente/Disstex  ]]; then source ~/Dokumente/Disstex; fi
 	if [[ -d ~/scratch/  ]]; then source ~/scratch/;  fi
-if [[ -d ~/Downloads/Atraci-Angular/build/Atraci/linux64/ ]]; then source ~/Downloads/Atraci-Angular/build/Atraci/linux64/; fi
+if [[ -d ~/Downloads/platform-tools/ ]]; then source ~/Downloads/platform-tools/; fi
+if [[ -d ~/Downloads/android-studio/ ]]; then source ~/Downloads/android-studio/; fi
 
 #if [ $HOST == "wtch028" ]; then
 #if [[ "$HOST" = wtch058]] then
