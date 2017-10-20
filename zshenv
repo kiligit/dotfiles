@@ -76,8 +76,13 @@ function gitbunduni() {git bundle create ~/Dokumente/unihome.bundle ^daheim/mast
 alias syncSea='rsync -az ~/ /media/kilian/Seagate\ Backup\ Plus\ Drive/myunihome/'
 alias syncFree='rsync -avz ~/Dokumente/ /media/kilian/FreeAgent\ Drive/Dokumente/'
 alias unissh='ssh -Y kilian@132.187.199.56 -t zsh '
+alias uni30ssh='ssh -Y kilian@132.187.199.30 -t zsh '
 alias showM='showsys84'
 alias cdM='cd ~/MCTDH/'
+
+function pdfcomp(){
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$2 $1
+}
 #extract any archive. FROM zshwiki
 function extract_archive () {
     local old_dirs current_dirs lower
