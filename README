@@ -9,6 +9,13 @@ ln -s ~/dotfiles/zshenv ~/.zshenv
 Create a directory (~/.grace/template/) and LINK the XmgraceDefault.agr file
 ln -s ~/dotfiles/xmgrDefault ~/.grace/templates/Default.agr
 "###############local stuff. do by hand######################"
+###VIM SPF13################
+curl http://j.mp/spf13-vim3 -L -o - | sh
+#Updating to the latest version
+cd $HOME/to/spf13-vim/
+git pull
+vim +BundleInstall! +BundleClean +q
+####################
 "for LATEX: make fonts work " or just install full texlive 4GB, by hand. homepage
 tlmgr init-usertree
 tlmgr info collection-fontsrecommended
