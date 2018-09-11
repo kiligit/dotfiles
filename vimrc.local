@@ -84,7 +84,7 @@ let g:Tex_CompileRule_pdf = 'xelatex --synctex = 1 -interaction = nonstopmode $*
 let g:vimtex_latexmk_continuous=0
 let g:vimtex_latexmk_background=1
 let g:vimtex_view_general_viewer='zathura'
-let g:latex_view_general_options=shellescape('--synctex-forward "' . exepath(v:progpath) . ' --servername ' . v:servername . ' +{%lline} {%ffile}"')
+"let g:latex_view_general_options=shellescape('--synctex-forward "' . exepath(v:progpath) . ' --servername ' . v:servername . ' +{%lline} {%ffile}"')
 "ignore warnings in gcc output (latex)
 set errorformat^=%-G%f:%l:\ warning:%m
 "let vimtex_quickfix_ignore_all_warnings=1
