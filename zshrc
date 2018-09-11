@@ -127,14 +127,15 @@ if [[ -d ~/Downloads/android-studio/ ]]; then source ~/Downloads/android-studio/
 #fi
 #dont got below delay of 200 ! Rate 40 to 100 is np. Just try
 case $HOST in
-(wtch056)
+(helix-dev)
 echo "I am on $HOST"
-xset b off
-xset r rate 200 80;;
+sudo kbdrate -d 200 -r 80
+;;
 (*)
 echo "I am on $HOST"
 xset b off
-xset r rate 200 80;;
+xset r rate 200 80
+;;
 esac
 #disable beep sound
 # Example aliases
